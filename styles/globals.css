@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: #d4e1e7;
+}
+
+/* Service Carouse */
+
+/* Product BG */
+.products {
+  background-color: #d4e1e7;
+  background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%231a6ea6' fill-opacity='0.06'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+footer {
+  background: url("../public/Footer.svg") bottom / contain no-repeat;
+}
+
+@media (min-width: 992px) {
+  footer {
+    background: url("../public/Footer.svg") bottom / cover no-repeat;
+  }
+}
+#questions-overlay {
+  background: url("../public/footer-overlay.svg") bottom / contain no-repeat;
+}
+
+@media (min-width: 992px) {
+  #questions-overlay {
+    background: url("../public/footer-overlay.svg") bottom / cover no-repeat;
+  }
+}
+
+.link-arrow:hover::before {
+  content: "";
+  background-image: url("../public/opnw.svg");
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 6px;
+}
+
+.shadow-brand:hover {
+  filter: drop-shadow(-6px 10px 26px rgba(42, 154, 218, 0.45));
+}
+
+/* About Page */
+.main-commit {
+  filter: drop-shadow(-6px 10px 13px rgba(42, 154, 218, 0.45));
+}
+.main-commit:hover {
+  filter: drop-shadow(-6px 10px 26px rgba(42, 154, 218, 0.45));
+}
+.side-commit:hover {
+  filter: drop-shadow(-6px 10px 16px rgba(42, 154, 218, 0.15));
+}
+
+p.arrow::after {
+  content: "";
+  background-image: url("../public/arrow.png");
+  background-repeat: no-repeat;
+  width: 62px;
+  height: 62px;
+  display: block;
+  top: calc(50% + 1.6rem);
+  right: calc(50% - 7rem);
+  position: absolute;
+}
+div.question::after {
+  content: "";
+  background-image: url("../public/Questions.png");
+  background-repeat: no-repeat;
+  width: 230px;
+  height: 230px;
+  display: block;
+  bottom: calc(50% - 1rem);
+  left: calc(50% - 0.5rem);
+  position: absolute;
+  transform: scale(0.6);
+}
+
+@media (min-width: 506px) {
+  div.question::after {
+    content: "";
+    background-image: url("../public/Questions.png");
+    background-repeat: no-repeat;
+    width: 230px;
+    height: 230px;
+    display: block;
+    bottom: calc(50% - 2rem);
+    left: calc(50% + 3rem);
+    position: absolute;
+    transform: scale(0.6);
+  }
+  p.arrow::after {
+    content: "";
+    background-image: url("../public/arrow.png");
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    display: block;
+    top: calc(50% + 2rem);
+    left: calc(50% - 0.5rem);
+    position: absolute;
+  }
+}
+@media (min-width: 780px) {
+  div.question::after {
+    content: "";
+    background-image: url("../public/Questions.png");
+    background-repeat: no-repeat;
+    width: 230px;
+    height: 230px;
+    display: block;
+    bottom: calc(50% - 4rem);
+    left: calc(50% + 8rem);
+    position: absolute;
+    transform: scale(0.8);
+  }
+  p.arrow::after {
+    content: "";
+    background-image: url("../public/arrow.png");
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    display: block;
+    top: calc(50% - 0.8rem);
+    left: calc(50% - 7rem);
+    position: absolute;
+  }
+}
+
+.radial-gradient {
+  background: radial-gradient(
+    50% 1662.41% at 50% 50%,
+    #5ebce6 0%,
+    #3aaee3 100%
+  );
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
