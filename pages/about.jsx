@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Image from "next/future/image";
 import React from "react";
-import AboutHead from "../public/about-mount.svg";
-import wave from "../public/about-wave.svg";
+
 import Featured from "../components/Featured";
 import AboutCommitment from "../components/AboutCommitment";
 import Questions from "../components/Questions";
@@ -23,7 +22,14 @@ const about = () => {
         <div className="text-white bg-neutral-800">
           <section className="relative">
             <div className="absolute bottom-0 left-0 w-screen z-10  object-cover">
-              <Image src={wave} alt="Wave" objectFit="cover" layout="fixed" />
+              <Image
+                src="/about-wave.svg"
+                alt="Wave"
+                objectFit="cover"
+                layout="fixed"
+                width="1920"
+                height="936"
+              />
             </div>
             <div className="container mx-auto relative z-[3] p-0">
               <div className="flex flex-col md:pt-24">
@@ -41,7 +47,12 @@ const about = () => {
                 <div className="grid md:grid-cols-2 md:px-72 pb-20">
                   <div className="">
                     <div className="img-box scale-95 md:scale-125 pb-4">
-                      <Image alt="" src={AboutHead} height={554} width={816} />
+                      <Image
+                        alt=""
+                        src="/about-mount.svg"
+                        height={554}
+                        width={816}
+                      />
                     </div>
                   </div>
                   <div className="">
@@ -75,7 +86,7 @@ const about = () => {
       <AboutCommitment />
       <section className="flex max-w-6xl flex-col md:flex-row mx-auto py-6 px-3 md:py-24">
         <div className="">
-          <Image src={AboutHead} alt="mount" />
+          <Image src="/about-mount.svg" alt="mount" height={554} width={816} />
         </div>
         <div className="max-w-2xl text-justify flex flex-col gap-3">
           <h5 className="text-3xl font-light py-3">

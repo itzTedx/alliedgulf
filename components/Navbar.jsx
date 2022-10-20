@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 
 import { Disclosure, Transition } from "@headlessui/react";
-import logo from "../public/allied-gulf.png";
 import { Sling as Hamburger } from "hamburger-react";
 
 const navigationRoutes = [
@@ -32,7 +31,7 @@ const Navbar = () => {
                       <div className="flex flex-shrink-0 items-center gap-2">
                         <div className="hidden md:block">
                           <Image
-                            src={logo}
+                            src="/allied-gulf.png"
                             height={54}
                             width={42}
                             alt="Allied Gulf Construction Services"

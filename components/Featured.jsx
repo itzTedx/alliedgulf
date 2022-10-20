@@ -1,8 +1,5 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import React from "react";
-import featured1 from "../public/featured-brand-1.png";
-import featured2 from "../public/featured-brand-2.png";
-import featured3 from "../public/featured-brand-3.png";
 
 const Featured = () => {
   return (
@@ -16,9 +13,9 @@ const Featured = () => {
           quality products distributed in kingdom of bahrain.
         </p>
         <div className="py-5 flex flex-col items-center">
-          <Image src={featured1} alt="" />
-          <Image src={featured2} alt="" />
-          <Image src={featured3} alt="" />
+          <Image src="/featured-brand-1.png" alt="" height={61} width={1077} />
+          <Image src="/featured-brand-2.png" alt="" height={61} width={1077} />
+          <Image src="/featured-brand-3.png" alt="" height={61} width={1077} />
         </div>
       </section>
     </div>

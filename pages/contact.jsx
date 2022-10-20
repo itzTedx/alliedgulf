@@ -1,10 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import SocialMedia from "../components/SocialMedia";
 import ContactForm from "../components/ContactForm";
 
-import mailIcon from "../public/Mail.svg";
 import { ToastContainer } from "react-toastify";
 
 export default function ContactUs() {
@@ -152,7 +151,7 @@ export default function ContactUs() {
               <div className=" bg-sky-700 mb-5">
                 <div className="flex items-center justify-center h-14 w-14">
                   <Image
-                    src={mailIcon}
+                    src="/Mail.svg"
                     alt="Contact Allied Gulf Construction services"
                     height={32}
                     width={32}

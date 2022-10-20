@@ -1,7 +1,6 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import React from "react";
-import brDw from "../public/brochure.svg";
 
 const Brochure = () => {
   return (
@@ -9,7 +8,9 @@ const Brochure = () => {
       <div className="w-full flex items-center justify-center bg-sky-500 py-6">
         <div className="ml-auto ">
           <Image
-            src={brDw}
+            src="/brochure.svg"
+            width="475"
+            height="292"
             alt="Brochure about our product, services and projects"
           />
         </div>

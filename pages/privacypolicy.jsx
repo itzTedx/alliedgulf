@@ -1,9 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import React from "react";
-
-import privacy from "../public/privacy.svg";
 
 const privacypolicy = () => {
   return (
@@ -17,7 +15,12 @@ const privacypolicy = () => {
           Privacy Policy
         </h1>
         <div className="flex gap-60 ">
-          <Image src={privacy} alt="Privacy Policy" />
+          <Image
+            src="/privacy.svg"
+            alt="Privacy Policy"
+            width="405"
+            height="382"
+          />
           <div className="max-w-xl">
             <h5 className="text-3xl font-bold mb-9">
               Privacy Policy for Allied Gulf Construction Service

@@ -2,11 +2,6 @@ import Head from "next/head";
 import Image from "next/future/image";
 import Link from "next/link";
 
-import experience from "../public/exp.jpg";
-import medal from "../public/medal.svg";
-import satisfaction from "../public/satisfaction.svg";
-import team from "../public/team.svg";
-
 import Featured from "../components/Featured";
 import Questions from "../components/Questions";
 import Slider from "../components/Slider";
@@ -30,8 +25,6 @@ interface Props {
 }
 
 export default function Home({ serviceSlider }: Props) {
-  console.log(serviceSlider);
-
   return (
     <div>
       <Head>
@@ -90,9 +83,10 @@ export default function Home({ serviceSlider }: Props) {
               <div className="bg-sky-500 rounded-full p-2">
                 <div className="h-12 w-12 p-1">
                   <Image
-                    src={medal}
+                    src="/Medal.svg"
                     alt="High quality services at fair prices"
-                    className=""
+                    height={48}
+                    width={48}
                   />
                 </div>
               </div>
@@ -105,9 +99,10 @@ export default function Home({ serviceSlider }: Props) {
               <div className="bg-sky-500 rounded-full p-2">
                 <div className="h-12 w-12 p-1">
                   <Image
-                    src={satisfaction}
+                    src="/Satisfaction.svg"
                     alt="Customer Satisfaction is our priority"
-                    className=""
+                    height={48}
+                    width={48}
                   />
                 </div>
               </div>
@@ -121,7 +116,12 @@ export default function Home({ serviceSlider }: Props) {
             <div className="flex gap-2 items-center">
               <div className="bg-sky-500 rounded-full p-2">
                 <div className="h-12 w-12 p-1">
-                  <Image src={team} alt="Uniqueness" className="" />
+                  <Image
+                    src="/Team.svg"
+                    alt="Uniqueness"
+                    height={48}
+                    width={48}
+                  />
                 </div>
               </div>
               <p className="font-normal md:font-light p-2 first-letter:pl-0 md:first-letter:pl-3 text-sm md:text-lg">
@@ -132,7 +132,12 @@ export default function Home({ serviceSlider }: Props) {
             </div>
           </div>
           <div className="md:h-full group-hover:scale-105 transition duration-500 ">
-            <Image src={experience} alt="Long term experience in the field" />
+            <Image
+              src="/exp.jpg"
+              alt="Long term experience in the field"
+              height={481}
+              width={352}
+            />
           </div>
         </section>
       </div>

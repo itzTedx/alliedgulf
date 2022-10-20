@@ -1,6 +1,5 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import React from "react";
-import serviceHeadImage from "../public/service-img.jpg";
 
 const Header = () => {
   return (
@@ -17,7 +16,12 @@ const Header = () => {
             </p>
           </div>
           <div className="container">
-            <Image src={serviceHeadImage} alt="List of Services we provide" />
+            <Image
+              src="/service-img.jpg"
+              alt="List of Services we provide"
+              width={634}
+              height={400}
+            />
           </div>
         </div>
       </section>

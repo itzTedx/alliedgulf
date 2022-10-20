@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField } from "@mui/material";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
@@ -161,7 +161,6 @@ export default function ContactUs() {
         theme: "light",
       });
     }
-    console.log(name, email, contact, company, message);
   };
 
   return (

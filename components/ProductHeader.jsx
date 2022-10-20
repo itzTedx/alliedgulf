@@ -1,6 +1,5 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import React from "react";
-import productHeadImage from "../public/products-img.jpg";
 
 const ProductBanner = () => {
   return (
@@ -14,7 +13,12 @@ const ProductBanner = () => {
             <p className="text-neutral-300">Looking for specialty materials?</p>
           </div>
           <div className="container">
-            <Image src={productHeadImage} alt="List of Services we provide" />
+            <Image
+              src="/products-img.jpg"
+              alt="List of Services we provide"
+              height={400}
+              width={633}
+            />
           </div>
         </div>
       </section>
