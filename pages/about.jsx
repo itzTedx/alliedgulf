@@ -20,7 +20,7 @@ const about = () => {
 
       <section className="overflow-hidden">
         <div className="text-white bg-neutral-800">
-          <section className="relative">
+          <section className="relative pointer-events-none">
             <div className="absolute bottom-0 left-0 w-screen z-10  object-cover">
               <Image
                 src="/about-wave.svg"
@@ -45,7 +45,7 @@ const about = () => {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 md:px-72 pb-20">
-                  <div className="">
+                  <div className="pointer-events-none">
                     <div className="img-box scale-95 md:scale-125 pb-4">
                       <Image
                         alt=""
@@ -85,7 +85,7 @@ const about = () => {
 
       <AboutCommitment />
       <section className="flex max-w-6xl flex-col md:flex-row mx-auto py-6 px-3 md:py-24">
-        <div className="">
+        <div className="pointer-events-none">
           <Image src="/about-mount.svg" alt="mount" height={554} width={816} />
         </div>
         <div className="max-w-2xl text-justify flex flex-col gap-3">
