@@ -40,9 +40,11 @@ const Navbar = () => {
                         </div>
 
                         <div className="text-neutral-500 font-bold uppercase text-xs lg:text-lg block sm:hidden md:block">
-                          <span className="text-sky-700">Allied</span> Gulf{" "}
-                          <span className="text-sky-700">construction</span>{" "}
-                          services <span className="text-sky-700">W.L.L</span>
+                          <h1>
+                            <span className="text-sky-700">Allied</span> Gulf{" "}
+                            <span className="text-sky-700">construction</span>{" "}
+                            services <span className="text-sky-700">W.L.L</span>
+                          </h1>
                         </div>
                       </div>
                     </a>

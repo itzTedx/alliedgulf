@@ -34,6 +34,7 @@ export default function Home({ serviceSlider }: Props) {
           content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
         />
       </Head>
+
       <main className="grid lg:grid-cols-2 items-center justify-items-center">
         <div className="text-center lg:text-left">
           <h1 className="font-bold text-3xl lg:text-6xl 2xl:text-7xl text-sky-700 py-3">
