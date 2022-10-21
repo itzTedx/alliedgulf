@@ -15,7 +15,7 @@ const ProductBanner = () => {
           <div className="container">
             <Image
               src="/products-img.jpg"
-              alt="List of Services we provide"
+              alt="Services we provide to enhance your project"
               height={400}
               width={633}
             />

@@ -127,10 +127,10 @@ export const getServerSideProps = async () => {
     title,
     image,
     description,
-  tags1,
-  tags2,
-  tags3,
-  tags4
+    tags1,
+    tags2,
+    tags3,
+    tags4
   }`;
 
   const project = await sanityClient.fetch(query);

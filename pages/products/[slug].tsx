@@ -54,7 +54,7 @@ function Product({ product }: Props) {
               </p>
               <div className="mb-3">
                 <Link
-                  href={`mailto:info@alliedgulf.com?subject=${product.title}%20-%20Order%20&body=Hi sir, Im interested in this product can we discuss more about it%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0APhone:%0D%0A `}
+                  href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
                 >
                   <a className="text-white bg-neutral-800 py-3 px-4 ">
                     Let{`'`}s talk

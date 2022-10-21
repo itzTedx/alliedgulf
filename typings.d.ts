@@ -35,6 +35,7 @@ export interface ServiceSliders {
     asset: {
       url: string;
     };
+    caption: string;
   };
   carouselTitle: string;
 }

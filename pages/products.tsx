@@ -29,12 +29,8 @@ export default function Products({ products }: Props) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-6">
           {products.map((products) => (
-            <Link
-              key={products._id}
-              href={`/products/${products.slug.current}`}
-              passHref
-            >
-              <div className="hover:scale-105 transition ease-in-out duration-500 grid grid-cols-3 gap-3 cursor-pointer group">
+            <div key={products._id}>
+              <div className="hover:scale-105 transition ease-in-out duration-500 grid grid-cols-3 gap-3 cursor-pointer">
                 <div className="h-full">
                   {products.image && (
                     <Image
@@ -47,17 +43,19 @@ export default function Products({ products }: Props) {
                   )}
                 </div>
                 <div className="flex flex-col gap-2 bg-white col-span-2">
-                  <div className="">
-                    <h5 className="text-lg md:text-xl font-bold text-sky-800 group-hover:text-sky-600">
-                      {products.title}
-                    </h5>
-                    <p className="line-clamp-2 md:line-clamp-4 text-sm">
-                      {products.description}
-                    </p>
-                  </div>
+                  <Link href={`/products/${products.slug.current}`} passHref>
+                    <div className="">
+                      <h5 className="text-lg md:text-xl font-bold text-sky-800 hover:text-sky-600">
+                        {products.title}
+                      </h5>
+                      <p className="line-clamp-2 md:line-clamp-4 text-sm">
+                        {products.description}
+                      </p>
+                    </div>
+                  </Link>
                   <div className="">
                     <Link
-                      href={`mailto:info@alliedgulf.com?subject=${products.title}%20-%20Order%20&body=Hi sir, Im interested in this product can we discuss more about it%0D%0A%0D%0AProduct: ${products.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0APhone:%0D%0A `}
+                      href={`mailto:info@alliedgulf.me?subject=${products.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${products.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
                     >
                       <a className="py-2 px-3 text-sm md:text-base bg-sky-700 hover:bg-sky-400 transition hover:text-neutral-800 text-white">
                         Order Now
@@ -66,7 +64,7 @@ export default function Products({ products }: Props) {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

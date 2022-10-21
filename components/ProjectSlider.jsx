@@ -33,7 +33,7 @@ export default function ProjectSlider() {
               src="/Photo-1.jpg"
               width={1280}
               height={614}
-              alt=""
+              alt="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
               className="swiper-lazy w-full"
             />
           </div>
@@ -43,7 +43,7 @@ export default function ProjectSlider() {
             src="/Photo-2.jpg"
             width={1280}
             height={614}
-            alt=""
+            alt="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
             className="swiper-lazy w-full"
           />
         </SwiperSlide>
@@ -52,7 +52,7 @@ export default function ProjectSlider() {
             src="/Photo-3.jpg"
             width={1280}
             height={614}
-            alt=""
+            alt="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
             className="swiper-lazy w-full"
           />
         </SwiperSlide>

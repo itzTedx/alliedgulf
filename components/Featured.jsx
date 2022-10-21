@@ -13,9 +13,24 @@ const Featured = () => {
           quality products distributed in kingdom of bahrain.
         </p>
         <div className="py-5 flex flex-col gap-6 items-center pointer-events-none">
-          <Image src="/featured-brand-1.png" alt="" height={61} width={1077} />
-          <Image src="/featured-brand-2.png" alt="" height={61} width={1077} />
-          <Image src="/featured-brand-3.png" alt="" height={61} width={1077} />
+          <Image
+            src="/featured-brand-1.png"
+            alt="Collaboration with top brands"
+            height={61}
+            width={1077}
+          />
+          <Image
+            src="/featured-brand-2.png"
+            alt="Collaboration with top brands"
+            height={61}
+            width={1077}
+          />
+          <Image
+            src="/featured-brand-3.png"
+            alt="Collaboration with top brands"
+            height={61}
+            width={1077}
+          />
         </div>
       </section>
     </div>

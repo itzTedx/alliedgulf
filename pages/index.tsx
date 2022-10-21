@@ -28,7 +28,7 @@ export default function Home({ serviceSlider }: Props) {
   return (
     <div>
       <Head>
-        <title>Allied Gulf Construction Services</title>
+        <title>Allied Gulf Construction Services W.L.L - Bahrain</title>
         <meta
           name="description"
           content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
@@ -119,7 +119,7 @@ export default function Home({ serviceSlider }: Props) {
                 <div className="h-12 w-12 p-1">
                   <Image
                     src="/Team.svg"
-                    alt="Uniqueness"
+                    alt="Unity in diversity "
                     height={48}
                     width={48}
                   />
@@ -135,7 +135,7 @@ export default function Home({ serviceSlider }: Props) {
           <div className="md:h-full group-hover:scale-105 transition duration-500 ">
             <Image
               src="/exp.jpg"
-              alt="Long term experience in the field"
+              alt="Long term experience in the field of Construction and Material supply"
               height={481}
               width={352}
             />
@@ -188,7 +188,7 @@ export default function Home({ serviceSlider }: Props) {
                     <div className="bg-white flex h-full flex-col relative object-cover">
                       <Image
                         src={urlFor(serviceSlider.carouselImage).url()!}
-                        alt={serviceSlider.carouselTitle}
+                        alt={serviceSlider.carouselImage.caption}
                         width={534}
                         height={400}
                       />
@@ -205,7 +205,7 @@ export default function Home({ serviceSlider }: Props) {
         <div className="p-12">
           <Link href="/services">
             <a className=" py-2 px-3 rounded-md hover:bg-sky-600 bg-sky-700 transition ease-out duration-700 text-white">
-              View More{" "}
+              View More
             </a>
           </Link>
         </div>
@@ -258,7 +258,10 @@ export default function Home({ serviceSlider }: Props) {
 export const getServerSideProps = async () => {
   const query = `*[_type == "servicesHome"] {
     _id,
-    carouselImage,
+    carouselImage{
+      asset->{url},
+      caption
+    },
     carouselTitle,
   }`;
 
