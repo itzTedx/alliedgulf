@@ -8,10 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        swirl: "url('/swirl_t1.png')",
-        about: "url('/about-background.png')",
-        aboutCloud:
-          "url('https://res.cloudinary.com/dayropo/image/upload/v1650049471/about-background_zhkq9b.png')",
+        footer: "url('/Footer.svg')",
+        arrow: "('/arrow.png')",
+        Questions: "('/Questions.png')",
       },
     },
   },

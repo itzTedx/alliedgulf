@@ -14,35 +14,13 @@ html {
 }
 
 footer {
-  background: url("../public/Footer.svg") bottom / contain no-repeat;
+  background: url("/Footer.svg") bottom / contain no-repeat;
 }
 
 @media (min-width: 992px) {
   footer {
-    background: url("../public/Footer.svg") bottom / cover no-repeat;
+    background: url("/Footer.svg") bottom / cover no-repeat;
   }
-}
-#questions-overlay {
-  background: url("../public/footer-overlay.svg") bottom / contain no-repeat;
-}
-
-@media (min-width: 992px) {
-  #questions-overlay {
-    background: url("../public/footer-overlay.svg") bottom / cover no-repeat;
-  }
-}
-
-.link-arrow:hover::before {
-  content: "";
-  background-image: url("../public/opnw.svg");
-  background-repeat: no-repeat;
-  width: 12px;
-  height: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  margin-top: 6px;
 }
 
 .shadow-brand:hover {
@@ -62,7 +40,7 @@ footer {
 
 p.arrow::after {
   content: "";
-  background-image: url("../public/arrow.png");
+  background-image: url("/arrow.png");
   background-repeat: no-repeat;
   width: 62px;
   height: 62px;
@@ -73,7 +51,7 @@ p.arrow::after {
 }
 div.question::after {
   content: "";
-  background-image: url("../public/Questions.png");
+  background-image: url("/Questions.png");
   background-repeat: no-repeat;
   width: 230px;
   height: 230px;
@@ -87,7 +65,7 @@ div.question::after {
 @media (min-width: 506px) {
   div.question::after {
     content: "";
-    background-image: url("../public/Questions.png");
+    background-image: url("/Questions.png");
     background-repeat: no-repeat;
     width: 230px;
     height: 230px;
@@ -99,7 +77,7 @@ div.question::after {
   }
   p.arrow::after {
     content: "";
-    background-image: url("../public/arrow.png");
+    background-image: url("/arrow.png");
     background-repeat: no-repeat;
     width: 62px;
     height: 62px;
@@ -112,7 +90,7 @@ div.question::after {
 @media (min-width: 780px) {
   div.question::after {
     content: "";
-    background-image: url("../public/Questions.png");
+    background-image: url("/Questions.png");
     background-repeat: no-repeat;
     width: 230px;
     height: 230px;
@@ -124,7 +102,7 @@ div.question::after {
   }
   p.arrow::after {
     content: "";
-    background-image: url("../public/arrow.png");
+    background-image: url("/arrow.png");
     background-repeat: no-repeat;
     width: 62px;
     height: 62px;
