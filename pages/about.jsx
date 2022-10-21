@@ -33,7 +33,7 @@ const about = () => {
             </div>
             <div className="container mx-auto relative z-[3] p-0">
               <div className="flex flex-col md:pt-24">
-                <div className="flex md:items-center flex-col md:py-2 font-light mb-14 text-center">
+                <div className="flex md:items-center flex-col md:py-2 font-light mb-14 text-center px-3 md:px-0">
                   <h1 className="md:text-4xl text-2xl py-3">
                     We Are{" "}
                     <span className="text-sky-600 font-medium">
