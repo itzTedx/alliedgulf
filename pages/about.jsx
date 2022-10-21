@@ -33,7 +33,7 @@ const about = () => {
             </div>
             <div className="container mx-auto relative z-[3] p-0">
               <div className="flex flex-col md:pt-24">
-                <div className="flex md:items-center flex-col md:py-2 font-light mb-14">
+                <div className="flex md:items-center flex-col md:py-2 font-light mb-14 text-center">
                   <h1 className="md:text-4xl text-2xl py-3">
                     We Are{" "}
                     <span className="text-sky-600 font-medium">
@@ -56,7 +56,7 @@ const about = () => {
                     </div>
                   </div>
                   <div className="">
-                    <div className="font-light text-sm text-justify px-3 md:px-0 flex flex-col gap-6">
+                    <div className="font-light text-sm text-justify px-4 md:px-0 flex flex-col gap-6">
                       <p>
                         We Allied Gulf Construction Service is a Bahrain based
                         Civil and Mechanical contracting company handling

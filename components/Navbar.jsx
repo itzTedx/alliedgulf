@@ -20,16 +20,16 @@ const Navbar = () => {
 
   return (
     <div>
-      <Disclosure as="nav" className="bg-neutral-800 sticky top-0 z-50">
+      <Disclosure as="nav" className="bg-neutral-800 fixed w-full top-0 z-50">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
               <div className="relative flex h-20 items-center justify-between">
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start ">
+                <div className="flex flex-1 md:flex-none items-center justify-between md:justify-center sm:items-stretch sm:justify-start ">
                   <Link href="/">
                     <a>
                       <div className="flex flex-shrink-0 items-center gap-2">
-                        <div className="hidden md:block">
+                        <div className="hidden sm:block">
                           <Image
                             src="/allied-gulf.png"
                             height={54}
@@ -39,7 +39,7 @@ const Navbar = () => {
                           />
                         </div>
 
-                        <div className="text-neutral-500 font-bold uppercase text-xs lg:text-base">
+                        <div className="text-neutral-500 font-bold uppercase text-xs lg:text-lg block sm:hidden md:block">
                           <span className="text-sky-700">Allied</span> Gulf{" "}
                           <span className="text-sky-700">construction</span>{" "}
                           services <span className="text-sky-700">W.L.L</span>

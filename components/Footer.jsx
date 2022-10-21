@@ -28,7 +28,10 @@ const Footer = () => {
           </div>
           <div>
             <Link href="/privacypolicy">
-              <a className="text-xs font-thin hover:text-sky-400 transition-all duration-300">
+              <a
+                className="text-xs font-thin hover:text-sky-400 transition-all duration-300"
+                rel="nofollow"
+              >
                 Terms of Service and Privacy Policy
               </a>
             </Link>

@@ -31,7 +31,7 @@ export default function Home({ serviceSlider }: Props) {
         <title>Allied Gulf Construction Services</title>
         <meta
           name="description"
-          content="For all Construction Services and Construction Specialty Materials"
+          content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
         />
       </Head>
       <main className="grid lg:grid-cols-2 items-center justify-items-center">

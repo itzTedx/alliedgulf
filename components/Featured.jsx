@@ -12,7 +12,7 @@ const Featured = () => {
           We’re collaborating with these top brands to fulfils you with best
           quality products distributed in kingdom of bahrain.
         </p>
-        <div className="py-5 flex flex-col items-center pointer-events-none">
+        <div className="py-5 flex flex-col gap-6 items-center pointer-events-none">
           <Image src="/featured-brand-1.png" alt="" height={61} width={1077} />
           <Image src="/featured-brand-2.png" alt="" height={61} width={1077} />
           <Image src="/featured-brand-3.png" alt="" height={61} width={1077} />
