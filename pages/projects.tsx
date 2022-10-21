@@ -23,6 +23,16 @@ export default function projects({ project, featuredProject }: Props) {
           name="description"
           content="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
         />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@agcsbahrain" />
+        <meta name="twitter:creator" content="@agcsbahrain" />
+        <meta property="og:url" content="https://www.alliedgulf.me/projects" />
+        <meta property="og:title" content="Top Projects in Bahrain - AGCS" />
+        <meta
+          property="og:description"
+          content="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
+        />
+        <meta property="og:image" content="/latest-project.jpg" />
       </Head>
       <ProjectSlider />
 
@@ -46,9 +56,9 @@ export default function projects({ project, featuredProject }: Props) {
                     Top Projects in Bahrain
                   </h1>
                 </div>
-                <h1 className="font-bold text-2xl md:text-5xl py-2">
+                <h2 className="font-bold text-2xl md:text-5xl py-2">
                   {featuredProject.title}
-                </h1>
+                </h2>
                 <span className="font-light">
                   {featuredProject.description}
                 </span>
@@ -74,9 +84,9 @@ export default function projects({ project, featuredProject }: Props) {
 
       <div className="container mx-auto">
         <div className="container max-w-6xl mx-auto py-8 mb-6 px-3">
-          <h1 className="text-3xl font-bold text-sky-600 py-5">
+          <h3 className="text-3xl font-bold text-sky-600 py-5">
             Recent Projects
-          </h1>
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-4 ">
             {project.map((project) => (
               <section
@@ -96,7 +106,7 @@ export default function projects({ project, featuredProject }: Props) {
                     )}
                   </div>
                   <div className=" px-6 py-3">
-                    <h1 className="font-bold text-3xl">{project.title}</h1>
+                    <h4 className="font-bold text-3xl">{project.title}</h4>
                     <span className="text-sm font-light">
                       {project.description}
                     </span>

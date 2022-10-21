@@ -16,6 +16,19 @@ const about = () => {
           content="Allied Gulf has Provided Design, Construction, Interior Fit out services, M.E.P. Services, Expansion joint solutions, Structural Works, Paintings, Marine support services, Shades, Sky lights & Domes, Coating & Insulations, Acoustics, Water proofing, Flooring, supply of equipment, Machineries, Construction materials, which include the most famous developers. Private clients, Malls, Factories, Retail chains, Food service outlets, Corporate."
           priority
         />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@agcsbahrain" />
+        <meta name="twitter:creator" content="@agcsbahrain" />
+        <meta property="og:url" content="https://www.alliedgulf.me/about" />
+        <meta
+          property="og:title"
+          content="About Allied Gulf Construction Services"
+        />
+        <meta
+          property="og:description"
+          content="Allied Gulf has Provided Design, Construction, Interior Fit out services, M.E.P. Services, Expansion joint solutions, Structural Works, Paintings, Marine support services, Shades, Sky lights & Domes, Coating & Insulations, Acoustics, Water proofing, Flooring, supply of equipment, Machineries, Construction materials, which include the most famous developers. Private clients, Malls, Factories, Retail chains, Food service outlets, Corporate."
+        />
+        <meta property="og:image" content="/latest-project.jpg" />
       </Head>
 
       <section className="overflow-hidden">

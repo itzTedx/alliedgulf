@@ -16,6 +16,16 @@ export default function ContactUs() {
           content="Looking for specialty materials for your construction? You are one step closer to build or renovate your perfect building. Write us a few words about your project and product we'll get back to you within 24 hours."
           priority
         />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@agcsbahrain" />
+        <meta name="twitter:creator" content="@agcsbahrain" />
+        <meta property="og:url" content="https://www.alliedgulf.me/contact" />
+        <meta property="og:title" content="Just one more step - Contact now" />
+        <meta
+          property="og:description"
+          content="Looking for specialty materials for your construction? You are one step closer to build or renovate your perfect building. Write us a few words about your project and product we'll get back to you within 24 hours."
+        />
+        <meta property="og:image" content="/latest-project.jpg" />
       </Head>
       <div className="bg-neutral-800">
         <div className="h-80 max-w-7xl mx-auto flex flex-col justify-between p-5">

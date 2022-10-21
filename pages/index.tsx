@@ -33,6 +33,19 @@ export default function Home({ serviceSlider }: Props) {
           name="description"
           content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
         />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@agcsbahrain" />
+        <meta name="twitter:creator" content="@agcsbahrain" />
+        <meta property="og:url" content="https://www.alliedgulf.me/" />
+        <meta
+          property="og:title"
+          content="Allied Gulf Construction Services W.L.L - Bahrain"
+        />
+        <meta
+          property="og:description"
+          content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
+        />
+        <meta property="og:image" content="/latest-project.jpg" />
       </Head>
 
       <main className="grid lg:grid-cols-2 items-center justify-items-center">

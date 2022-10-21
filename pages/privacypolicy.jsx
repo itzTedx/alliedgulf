@@ -12,6 +12,7 @@ const privacypolicy = () => {
           name="description"
           content="At Allied Gulf Construction Service W.L.L, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Allied Gulf Construction Service W.L.L and how we use it."
         />
+        <meta name="robots" content="noindex" />
       </Head>
       <div className="container mx-auto max-w-7xl p-8">
         <h1 className="text-3xl md:text-6xl font-bold text-sky-600 mt-4 mb-12 md:mt-12">

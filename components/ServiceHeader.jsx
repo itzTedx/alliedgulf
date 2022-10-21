@@ -10,10 +10,10 @@ const Header = () => {
             <h1 className="text-4xl md:text-7xl text-white font-light pt-3 md:pt-0">
               Our <span className="font-bold text-sky-600">Services</span>
             </h1>
-            <p className="text-neutral-300">
+            <h2 className="text-neutral-300">
               List of Services we provide in{" "}
               <span className="italic">Kingdom of Bahrain</span>
-            </p>
+            </h2>
           </div>
           <div className="container">
             <Image
