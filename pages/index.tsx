@@ -5,6 +5,7 @@ import Link from "next/link";
 import Featured from "../components/Featured";
 import Questions from "../components/Questions";
 import Slider from "../components/Slider";
+import WebBanner from "../components/WebBanner";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,7 +33,7 @@ export default function Home({ serviceSlider }: Props) {
     keywords:
       "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior",
     url: "https://www.alliedgulf.me/",
-    image: "/latest-project.jpg",
+    image: "https://alliedgulf.vercel.app/og-img.jpg",
   };
   return (
     <div>
@@ -132,6 +133,7 @@ export default function Home({ serviceSlider }: Props) {
                 attitudes.
               </p>
             </div>
+
             <div className="flex gap-2 items-center">
               <div className="bg-sky-500 rounded-full p-2">
                 <div className="h-12 w-12 p-1">
@@ -160,6 +162,7 @@ export default function Home({ serviceSlider }: Props) {
           </div>
         </section>
       </div>
+
       <section className="w-full text-center bg-neutral-800 text-neutral-200">
         <div className=" p-8 md:p-20">
           <h3 className="font-light text-3xl md:text-5xl">
@@ -262,6 +265,9 @@ export default function Home({ serviceSlider }: Props) {
         </div>
       </section>
       <div className="bg-white">
+        <div className="max-w-4xl mx-auto pointer-events-none pt-12">
+          <WebBanner />
+        </div>
         <div className="py-8 px-3">
           <Featured />
         </div>
