@@ -8,6 +8,7 @@ import { sanityClient, urlFor } from "../../sanity";
 import { GetStaticProps } from "next";
 import { Service } from "../../typings";
 import Header from "../../components/ServiceHeader";
+import Link from "next/link";
 
 interface Props {
   service: Service;
@@ -23,6 +24,7 @@ function Service({ service }: Props) {
           rel="canonical"
           href={`https://www.alliedgulf.me/products/${service.servicesSlug.current}`}
         />
+        <meta name="keywords" content={service.metaTagKeyword} />
 
         <meta name="twitter:title" content={service.metaTagTitle} />
         <meta
@@ -45,13 +47,10 @@ function Service({ service }: Props) {
           content={urlFor(service.servicesImage).url()!}
         />
       </Head>
-      <Header />
+
       <main className="container mx-auto grid md:grid-cols-4 bg-white">
         <div className="md:col-span-3 flex">
           <article className=" mx-5 pt-4 md:p-12">
-            <h1 className="text-2xl md:text-3xl font-bold text-sky-700 pb-5">
-              {service.servicesTitle}
-            </h1>
             <div className="flex md:gap-12 flex-col md:flex-row">
               <div>
                 {service.servicesImage && (
@@ -65,7 +64,17 @@ function Service({ service }: Props) {
                 )}
               </div>
               <div className="pt-4 max-w-md text-justify">
+                <h1 className="text-2xl md:text-3xl font-bold text-sky-700 pb-5">
+                  {service.servicesTitle}
+                </h1>
                 <p>{service.servicesDescription}</p>
+                <div className="py-3">
+                  <Link href="/services">
+                    <a className="underline text-sky-700 hover:text-sky-500">
+                      Take a look at our other services
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
             <Banner />

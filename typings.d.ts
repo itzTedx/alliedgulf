@@ -11,6 +11,7 @@ export interface Service {
     current: string;
   };
   metaTagTitle: string;
+  metaTagKeyword: string;
 }
 
 export interface Product {
