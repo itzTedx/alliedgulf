@@ -30,7 +30,16 @@ function MyApp({ Component, pageProps }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2f2f2f" />
         <meta name="msapplication-TileColor" content="#2f2f2f" />
         <meta name="theme-color" content="#1a6ea6" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@agcsbahrain" />
+        <meta name="twitter:creator" content="@agcsbahrain" />
+
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:site_name" content="AlliedGulf.me" />
+        <meta property="og:type" content="website" />
       </Head>
+
       <Layout>
         <Component {...pageProps} />
       </Layout>

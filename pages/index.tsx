@@ -25,27 +25,32 @@ interface Props {
 }
 
 export default function Home({ serviceSlider }: Props) {
+  const meta = {
+    title: "Allied Gulf Construction Services W.L.L - Bahrain",
+    description:
+      "AGCS is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company",
+    keywords:
+      "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior",
+    url: "https://www.alliedgulf.me/",
+    image: "/latest-project.jpg",
+  };
   return (
     <div>
       <Head>
-        <title>Allied Gulf Construction Services W.L.L - Bahrain</title>
-        <meta
-          name="description"
-          content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
-        <meta property="og:url" content="https://www.alliedgulf.me/" />
-        <meta
-          property="og:title"
-          content="Allied Gulf Construction Services W.L.L - Bahrain"
-        />
-        <meta
-          property="og:description"
-          content="We Allied Gulf Construction Service is a Bahrain based Civil and Mechanical contracting company handling various prestigious projects and ranked as a leading General Trading company in Bahrain."
-        />
-        <meta property="og:image" content="/latest-project.jpg" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <link rel="canonical" href={meta.url} />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.description} />
+        <meta property="og:url" content={meta.url} />
       </Head>
 
       <main className="grid lg:grid-cols-2 items-center justify-items-center">
@@ -185,7 +190,7 @@ export default function Home({ serviceSlider }: Props) {
                 spaceBetween: 20,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 4,
                 spaceBetween: 20,
               },
             }}
