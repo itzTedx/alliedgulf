@@ -14,7 +14,7 @@ const about = () => {
     keywords:
       "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, info, sales, marketing",
     url: "https://www.alliedgulf.me/about",
-    image: "/latest-project.jpg",
+    image: "https://alliedgulf.vercel.app/og-img.jpg",
   };
   return (
     <>
