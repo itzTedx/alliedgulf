@@ -22,7 +22,7 @@ export default function projects({ project, featuredProject }: Props) {
     keywords:
       "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, amphitheater, al dana, ",
     url: "https://www.alliedgulf.me/projects",
-    image: "/latest-project.jpg",
+    image: "https://alliedgulf.vercel.app/og-img.jpg",
   };
   return (
     <>

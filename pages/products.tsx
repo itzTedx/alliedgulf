@@ -19,7 +19,7 @@ export default function Products({ products }: Props) {
     keywords:
       "allied, gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, tile, trims, carpet, manhole, cover, house, steel",
     url: "https://www.alliedgulf.me/products",
-    image: "/latest-project.jpg",
+    image: "https://alliedgulf.vercel.app/og-img.jpg",
   };
   return (
     <>

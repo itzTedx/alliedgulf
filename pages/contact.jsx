@@ -14,7 +14,7 @@ export default function ContactUs() {
     keywords:
       "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, contact, enquiry, quotation",
     url: "https://www.alliedgulf.me/contact",
-    image: "/latest-project.jpg",
+    image: "https://alliedgulf.vercel.app/og-img.jpg",
   };
 
   return (

@@ -69,6 +69,23 @@ export default function Home({ serviceSlider }: Props) {
             <p className="font-light text-lg">
               For all Construction Services and Construction Specialty Materials
             </p>
+            <div className="hidden">
+              <p>
+                We Allied Gulf Construction Service is a Bahrain based Civil and
+                Mechanical contracting company handling various prestigious
+                projects and ranked as a leading General Trading company in
+                Bahrain.
+              </p>
+              <p>
+                Our principal business is to provide Construction of Houses,
+                Buildings, Shopping Centers, Restaurants, Complete Interior Fit
+                out Services, Furniture, Kitchen Equipment, Structural Works,
+                Coating & Insulation, Turnkey and Restaurant Projects, Shades,
+                Prefab Houses / Offices, M.E.P, Floorings, Skylight, Portable
+                cabins, Container Conversion, Acoustics and General Trading of
+                Equipment,Machineries and Specialty Construction Materials.
+              </p>
+            </div>
           </div>
           <div className="font-medium text-xl lg:text-2xl space-x-1 py-6">
             <Link href="/products">
@@ -265,9 +282,6 @@ export default function Home({ serviceSlider }: Props) {
         </div>
       </section>
       <div className="bg-white">
-        <div className="max-w-4xl mx-auto pointer-events-none pt-12">
-          <WebBanner />
-        </div>
         <div className="py-8 px-3">
           <Featured />
         </div>

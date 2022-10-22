@@ -20,7 +20,7 @@ export default function Services({ services }: Props) {
     keywords:
       "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior",
     url: "https://www.alliedgulf.me/services",
-    image: "/latest-project.jpg",
+    image: "https://alliedgulf.vercel.app/og-img.jpg",
   };
   return (
     <>
