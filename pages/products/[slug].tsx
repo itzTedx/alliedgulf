@@ -9,7 +9,7 @@ import Header from "../../components/ProductHeader";
 import { sanityClient, urlFor } from "../../sanity";
 import { GetStaticProps } from "next";
 import { Product } from "../../typings";
-import WebBanner from "../../components/WebBanner";
+import { motion } from "framer-motion";
 
 interface Props {
   product: Product;
@@ -39,84 +39,91 @@ function Product({ product, productsList }: Props) {
         <meta property="og:description" content={product.description} />
         <meta property="og:image" content={urlFor(product.image).url()!} />
       </Head>
-      <main className="container mx-auto grid md:grid-cols-4 bg-white">
-        <div className="md:col-span-3 flex">
-          <article className="mx-5 pt-4 md:pt-12 md:px-6 lg:px-36">
-            <h1 className="text-2xl md:text-3xl font-bold text-sky-700 pb-5">
-              {product.title}
-            </h1>
-            <div className="flex md:gap-12 flex-col lg:flex-row pb-12">
-              <div>
-                {product.image && (
+      <div className="overflow-x-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <main className="">
+            <div className="md:h-[95vh] w-full grid grid-cols-1 md:grid-cols-2 grid-flow-row  md:items-center md:justify-items-center md:justify-center">
+              {product.image && (
+                <motion.div
+                  initial={{ x: 0 }}
+                  animate={{ x: [10, 0, 0] }}
+                  exit={{ x: 0 }}
+                >
                   <Image
                     src={urlFor(product.image).url()!}
                     alt={product.title}
                     width={200}
                     height={262}
                     priority
+                    className="w-6/12 rounded-lg hidden md:block"
                   />
-                )}
-              </div>
-              <div className="pt-4 max-w-lg text-justify">
-                <p className="mb-5">{product.description}</p>
-                <div className="flex items-center flex-col md:flex-row gap-1 md:gap-3">
-                  <Link
-                    href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
-                  >
-                    <a className="py-1 px-[0.6em] text-sm md:text-base bg-sky-700 hover:bg-sky-600 transition text-white">
-                      Order Now
+                </motion.div>
+              )}
+
+              <div className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0">
+                <div className="space-y-3 py-12 md:py-0">
+                  <Link href="/products-test">
+                    <a className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 hov">
+                      <div className="h-4 w-4 fill-neutral-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path d="M360 224L272 224v-56c0-9.531-5.656-18.16-14.38-22C248.9 142.2 238.7 143.9 231.7 150.4l-96 88.75C130.8 243.7 128 250.1 128 256.8c.3125 7.781 2.875 13.25 7.844 17.75l96 87.25c7.031 6.406 17.19 8.031 25.88 4.188s14.28-12.44 14.28-21.94l-.002-56L360 288C373.3 288 384 277.3 384 264v-16C384 234.8 373.3 224 360 224zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z" />
+                        </svg>
+                      </div>
+                      Back to products
                     </a>
                   </Link>
-                  <h6>or</h6>
-                  <div className="">
-                    <Link href="/products">
-                      <a className="underline text-sky-700 hover:text-sky-500 font-medium text-sm">
-                        Take a look at our other products.
-                      </a>
-                    </Link>
+                  {product.image && (
+                    <Image
+                      src={urlFor(product.image).url()!}
+                      alt={product.title}
+                      width={200}
+                      height={262}
+                      priority
+                      className="w-6/12 rounded-lg border border-white md:hidden"
+                    />
+                  )}
+                  <h1 className="text-2xl md:text-3xl font-bold text-sky-900 pt-8">
+                    {product.title}
+                  </h1>
+                  <div className="max-w-lg text-justify">
+                    <p className="mb-12">{product.description}</p>
+                    <div className="flex items-center flex-col md:flex-row gap-1 md:gap-3">
+                      <Link
+                        href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
+                      >
+                        <a className="py-2 px-5 rounded-lg text-sm md:text-base bg-sky-500 hover:bg-neutral-700 transition text-white">
+                          Order Now
+                        </a>
+                      </Link>
+                      <h6 className="font-light text-sm">or</h6>
+                      <div className="">
+                        <Link
+                          href="/Company-profile-agcs.pdf"
+                          rel="noopener noreferrer"
+                        >
+                          <a
+                            target="_blank"
+                            className=" text-sky-600 hover:text-sky-500 font-light"
+                          >
+                            Download our brochure
+                          </a>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <WebBanner />
-            <div className="relative rounded-lg mx-auto max-w-3xl text-white md:shadow-xl duration-500 ease-in-out radial-gradient py-7 px-10 md:mb-12 mt-6">
-              <h5 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Looking for specialty materials for your project?
-              </h5>
-              <p className=" mb-3 md:mb-8 font-light">
-                Just give us your projects details and we{`'`}ll get back to you
-                soon
-              </p>
-              <div className="mb-3">
-                <Link href="/contact">
-                  <a className="text-white bg-neutral-800 py-3 px-4 ">
-                    Let{`'`}s talk
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div className="mt-12 md:mt-0 ">
-          Related Products:
-          {productsList.map((productsList) => (
-            <div key={productsList._id} className="py-2 px-3 mr-4">
-              <div className="grid grid-cols-5 gap-2">
-                {productsList.image && (
-                  <Image
-                    src={urlFor(productsList.image).url()!}
-                    width={180}
-                    height={180}
-                    alt={productsList.title}
-                  />
-                )}
-                <div className="col-span-4">{productsList.metaTagTitle}</div>
-              </div>
-            </div>
-          ))}
-          <BrochureVertical />
-        </div>
-      </main>
+          </main>
+        </motion.div>
+      </div>
     </>
   );
 }
@@ -157,7 +164,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
      
     }`;
 
-  const productsQuery = `*[_type == "products"] | order(_createdAt asc) {
+  const productsQuery = `*[_type == "products"][0..5] | order(_createdAt desc) {
       _id,
       title,
       image,

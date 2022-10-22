@@ -29,7 +29,7 @@ export default {
       name: "image",
       title: "Product Image",
       type: "image",
-      description: "Recommended size width:180px, height: 180px",
+      description: "Recommended size width:220px, height: 220px",
       options: {
         hotspot: true,
       },

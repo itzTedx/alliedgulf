@@ -1,8 +1,9 @@
+import Head from "next/head";
+import { AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
 
 import "../styles/globals.css";
 import "swiper/css/bundle";
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -41,7 +42,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Layout>
-        <Component {...pageProps} />
+        <AnimatePresence mode="wait">
+          <Component {...pageProps} />
+        </AnimatePresence>
       </Layout>
     </>
   );
