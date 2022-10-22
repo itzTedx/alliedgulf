@@ -7,25 +7,33 @@ import ContactForm from "../components/ContactForm";
 import { ToastContainer } from "react-toastify";
 
 export default function ContactUs() {
+  const meta = {
+    title: "Just one more step - Contact now",
+    description:
+      "Looking for specialty materials for your construction? You are one step closer to build or renovate your perfect building",
+    keywords:
+      "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, contact, enquiry, quotation",
+    url: "https://www.alliedgulf.me/contact",
+    image: "/latest-project.jpg",
+  };
+
   return (
     <>
       <Head>
-        <title>Just one more step - Contact now</title>
-        <meta
-          name="description"
-          content="Looking for specialty materials for your construction? You are one step closer to build or renovate your perfect building. Write us a few words about your project and product we'll get back to you within 24 hours."
-          priority
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
-        <meta property="og:url" content="https://www.alliedgulf.me/contact" />
-        <meta property="og:title" content="Just one more step - Contact now" />
-        <meta
-          property="og:description"
-          content="Looking for specialty materials for your construction? You are one step closer to build or renovate your perfect building. Write us a few words about your project and product we'll get back to you within 24 hours."
-        />
-        <meta property="og:image" content="/latest-project.jpg" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <link rel="canonical" href={meta.url} />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.description} />
       </Head>
       <div className="bg-neutral-800">
         <div className="h-80 max-w-7xl mx-auto flex flex-col justify-between p-5">

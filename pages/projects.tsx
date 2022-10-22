@@ -15,24 +15,32 @@ interface Props {
 }
 
 export default function projects({ project, featuredProject }: Props) {
+  const meta = {
+    title: "Top Projects in Bahrain done by AGCS",
+    description:
+      "Ampitheater is the one of the leading Theater in Bahrain. We had done some of the projects, container conversion, bus toilets, rubber fencing etc",
+    keywords:
+      "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, amphitheater, al dana, ",
+    url: "https://www.alliedgulf.me/projects",
+    image: "/latest-project.jpg",
+  };
   return (
     <>
       <Head>
-        <title>Top Projects in Bahrain - AGCS</title>
-        <meta
-          name="description"
-          content="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
-        <meta property="og:url" content="https://www.alliedgulf.me/projects" />
-        <meta property="og:title" content="Top Projects in Bahrain - AGCS" />
-        <meta
-          property="og:description"
-          content="AMPHITHEATER is the one of the leading Theater in Kingdom of Bahrain. Allied Gulf Construction Services had done some of the projects, tire screen, container conversion, bus toilets, bar counters, rubber fencing, container toilets etc."
-        />
-        <meta property="og:image" content="/latest-project.jpg" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <link rel="canonical" href={meta.url} />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.description} />
       </Head>
       <ProjectSlider />
 

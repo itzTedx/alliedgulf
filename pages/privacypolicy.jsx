@@ -10,7 +10,7 @@ const privacypolicy = () => {
         <title>Privacy Policy for Allied Gulf Construction Service</title>
         <meta
           name="description"
-          content="At Allied Gulf Construction Service W.L.L, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Allied Gulf Construction Service W.L.L and how we use it."
+          content="At AGCS, one of our main priorities is the privacy of our visitors. This document contains types of information that is collected and recorded by us"
         />
         <meta name="robots" content="noindex" />
       </Head>

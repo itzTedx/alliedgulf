@@ -19,9 +19,21 @@ function Service({ service }: Props) {
       <Head>
         <title>{service.metaTagTitle}</title>
         <meta name="description" content={service.servicesDescription} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
+        <link
+          rel="canonical"
+          href={`https://www.alliedgulf.me/products/${service.servicesSlug.current}`}
+        />
+
+        <meta name="twitter:title" content={service.metaTagTitle} />
+        <meta
+          name="twitter:description"
+          content={service.servicesDescription}
+        />
+        <meta
+          name="twitter:image"
+          content={urlFor(service.servicesImage).url()!}
+        />
+
         <meta
           property="og:url"
           content={`https://www.alliedgulf.me/services/${service.servicesSlug.current}`}

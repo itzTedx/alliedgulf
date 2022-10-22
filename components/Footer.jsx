@@ -32,7 +32,7 @@ const Footer = () => {
                 className="text-xs font-thin hover:text-sky-400 transition-all duration-300"
                 rel="nofollow"
               >
-                Terms of Service and Privacy Policy
+                <h6>Terms of Service and Privacy Policy</h6>
               </a>
             </Link>
           </div>

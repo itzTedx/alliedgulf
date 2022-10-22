@@ -13,24 +13,32 @@ interface Props {
 }
 
 export default function Services({ services }: Props) {
+  const meta = {
+    title: "Services we providing in Bahrain",
+    description:
+      "Agcs providing various services for your projects such as Building Construction, Interior Decorations, Portable & Modular Cabins, Structural Fabrications.",
+    keywords:
+      "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior",
+    url: "https://www.alliedgulf.me/services",
+    image: "/latest-project.jpg",
+  };
   return (
     <>
       <Head>
-        <title>Services we providing in Bahrain</title>
-        <meta
-          name="description"
-          content="We're providing various services for your projects such as Building Construction, Wall protection system, Interior Decorations, Portable & Modular Cabins, Structural Fabrications."
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
-        <meta property="og:url" content="https://www.alliedgulf.me/services" />
-        <meta property="og:title" content="Services we providing in Bahrain" />
-        <meta
-          property="og:description"
-          content="We're providing various services for your projects such as Building Construction, Wall protection system, Interior Decorations, Portable & Modular Cabins, Structural Fabrications."
-        />
-        <meta property="og:image" content="/latest-project.jpg" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <link rel="canonical" href={meta.url} />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.description} />
       </Head>
       <div className="overflow-hidden">
         <ServiceHeader />

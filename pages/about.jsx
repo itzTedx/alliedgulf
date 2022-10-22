@@ -7,28 +7,32 @@ import AboutCommitment from "../components/AboutCommitment";
 import Questions from "../components/Questions";
 
 const about = () => {
+  const meta = {
+    title: "About Allied Gulf Construction Services",
+    description:
+      "We provide you the best experience to perform for our customers the highest level of quality construction services at fair and market-competitive prices",
+    keywords:
+      "allied gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, info, sales, marketing",
+    url: "https://www.alliedgulf.me/about",
+    image: "/latest-project.jpg",
+  };
   return (
     <>
       <Head>
-        <title>About Allied Gulf Construction Services</title>
-        <meta
-          name="description"
-          content="Allied Gulf has Provided Design, Construction, Interior Fit out services, M.E.P. Services, Expansion joint solutions, Structural Works, Paintings, Marine support services, Shades, Sky lights & Domes, Coating & Insulations, Acoustics, Water proofing, Flooring, supply of equipment, Machineries, Construction materials, which include the most famous developers. Private clients, Malls, Factories, Retail chains, Food service outlets, Corporate."
-          priority
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
-        <meta property="og:url" content="https://www.alliedgulf.me/about" />
-        <meta
-          property="og:title"
-          content="About Allied Gulf Construction Services"
-        />
-        <meta
-          property="og:description"
-          content="Allied Gulf has Provided Design, Construction, Interior Fit out services, M.E.P. Services, Expansion joint solutions, Structural Works, Paintings, Marine support services, Shades, Sky lights & Domes, Coating & Insulations, Acoustics, Water proofing, Flooring, supply of equipment, Machineries, Construction materials, which include the most famous developers. Private clients, Malls, Factories, Retail chains, Food service outlets, Corporate."
-        />
-        <meta property="og:image" content="/latest-project.jpg" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <link rel="canonical" href={meta.url} />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.description} />
       </Head>
 
       <section className="overflow-hidden">

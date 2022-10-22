@@ -12,27 +12,32 @@ interface Props {
 }
 
 export default function Products({ products }: Props) {
+  const meta = {
+    title: "Products of Allied Gulf Construction Services",
+    description:
+      "We offer a wide range of products and provide complete client satisfaction and fulfils you with best quality products. Take a look.",
+    keywords:
+      "allied, gulf, agcs, construction, service, materials, movement joints, expansion joints, interior, tile, trims, carpet, manhole, cover, house, steel",
+    url: "https://www.alliedgulf.me/products",
+    image: "/latest-project.jpg",
+  };
   return (
     <>
       <Head>
-        <title>Products of Allied Gulf Construction Services</title>
-        <meta
-          name="description"
-          content="We offer a wide range of products and provide complete client satisfaction. Our Products Expansion Joints, Movement Joints, Tile trims, Carpet Trims, Manhole Covers, Channels, Metal Doors, Acoustic panels"
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
-        <meta property="og:url" content="https://www.alliedgulf.me/products" />
-        <meta
-          property="og:title"
-          content="Products of Allied Gulf Construction Services"
-        />
-        <meta
-          property="og:description"
-          content="We offer a wide range of products and provide complete client satisfaction. Our Products Expansion Joints, Movement Joints, Tile trims, Carpet Trims, Manhole Covers, Channels, Metal Doors, Acoustic panels"
-        />
-        <meta property="og:image" content="/latest-project.jpg" />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <link rel="canonical" href={meta.url} />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.description} />
       </Head>
       <div className="overflow-hidden">
         <ProductHeader />

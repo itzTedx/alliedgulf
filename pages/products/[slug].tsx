@@ -20,9 +20,15 @@ function Product({ product }: Props) {
       <Head>
         <title>{product.metaTagTitle}</title>
         <meta name="description" content={product.description} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agcsbahrain" />
-        <meta name="twitter:creator" content="@agcsbahrain" />
+        <link
+          rel="canonical"
+          href={`https://www.alliedgulf.me/products/${product.slug.current}`}
+        />
+
+        <meta name="twitter:title" content={product.metaTagTitle} />
+        <meta name="twitter:description" content={product.description} />
+        <meta name="twitter:image" content={urlFor(product.image).url()!} />
+
         <meta
           property="og:url"
           content={`https://www.alliedgulf.me/products/${product.slug.current}`}

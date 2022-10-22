@@ -45,12 +45,12 @@ export default function Home({ serviceSlider }: Props) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+
         <meta property="og:url" content={meta.url} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={meta.image} />
         <meta property="og:image:alt" content={meta.description} />
-        <meta property="og:url" content={meta.url} />
       </Head>
 
       <main className="grid lg:grid-cols-2 items-center justify-items-center">
@@ -232,9 +232,9 @@ export default function Home({ serviceSlider }: Props) {
         <div className="bg-gray-200 max-w-7xl mx-auto shadow-xl">
           <div className="flex flex-col lg:flex-row justify-center gap-10 py-12 text-center px-3 lg:text-left lg:px-24 ">
             <div className="space-y-3 flex flex-col justify-center md:w-96">
-              <h3 className="font-light text-2xl md:text-5xl ">
+              <h4 className="font-light text-2xl md:text-5xl ">
                 Our <span className="font-bold text-sky-700">Products</span>
-              </h3>
+              </h4>
               <p className="text-xl md:text-3xl ">
                 We offer a wide range of services and provide complete client
                 satisfaction.

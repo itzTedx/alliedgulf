@@ -89,7 +89,7 @@ const Navbar = () => {
               </div>
             </div>
             <Transition
-              enter="transition-opacity duration-75"
+              enter="transition-opacity duration-300"
               enterFrom="opacity-0"
               enterTo="opacity-100"
               leave="transition-opacity duration-150"
@@ -97,7 +97,7 @@ const Navbar = () => {
               leaveTo="opacity-0"
             >
               <div className="sm:hidden">
-                <div className="px-3 pt-2 pb-5 flex flex-col text-center space-y-8 text-neutral-400">
+                <div className="px-3 py-4 flex flex-col text-center space-y-8 text-neutral-400">
                   {navigationRoutes.map((singleRoute) => {
                     return (
                       <NavigationLink
