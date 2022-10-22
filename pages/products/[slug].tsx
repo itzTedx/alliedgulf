@@ -9,12 +9,14 @@ import Header from "../../components/ProductHeader";
 import { sanityClient, urlFor } from "../../sanity";
 import { GetStaticProps } from "next";
 import { Product } from "../../typings";
+import WebBanner from "../../components/WebBanner";
 
 interface Props {
   product: Product;
+  productsList: [Product];
 }
 
-function Product({ product }: Props) {
+function Product({ product, productsList }: Props) {
   return (
     <>
       <Head>
@@ -37,14 +39,13 @@ function Product({ product }: Props) {
         <meta property="og:description" content={product.description} />
         <meta property="og:image" content={urlFor(product.image).url()!} />
       </Head>
-      <Header />
       <main className="container mx-auto grid md:grid-cols-4 bg-white">
         <div className="md:col-span-3 flex">
-          <article className="mx-5 pt-4 md:pt-12 md:px-36">
+          <article className="mx-5 pt-4 md:pt-12 md:px-6 lg:px-36">
             <h1 className="text-2xl md:text-3xl font-bold text-sky-700 pb-5">
               {product.title}
             </h1>
-            <div className="flex md:gap-12 flex-col md:flex-row pb-12">
+            <div className="flex md:gap-12 flex-col lg:flex-row pb-12">
               <div>
                 {product.image && (
                   <Image
@@ -57,10 +58,28 @@ function Product({ product }: Props) {
                 )}
               </div>
               <div className="pt-4 max-w-lg text-justify">
-                <p>{product.description}</p>
+                <p className="mb-5">{product.description}</p>
+                <div className="flex items-center flex-col md:flex-row gap-1 md:gap-3">
+                  <Link
+                    href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
+                  >
+                    <a className="py-1 px-[0.6em] text-sm md:text-base bg-sky-700 hover:bg-sky-600 transition text-white">
+                      Order Now
+                    </a>
+                  </Link>
+                  <h6>or</h6>
+                  <div className="">
+                    <Link href="/products">
+                      <a className="underline text-sky-700 hover:text-sky-500 font-medium text-sm">
+                        Take a look at our other products.
+                      </a>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="relative rounded-lg mx-auto max-w-3xl text-white md:shadow-xl duration-500 ease-in-out radial-gradient py-7 px-10">
+            <WebBanner />
+            <div className="relative rounded-lg mx-auto max-w-3xl text-white md:shadow-xl duration-500 ease-in-out radial-gradient py-7 px-10 md:mb-12 mt-6">
               <h5 className="text-2xl md:text-3xl font-bold text-white mb-2">
                 Looking for specialty materials for your project?
               </h5>
@@ -69,9 +88,7 @@ function Product({ product }: Props) {
                 soon
               </p>
               <div className="mb-3">
-                <Link
-                  href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
-                >
+                <Link href="/contact">
                   <a className="text-white bg-neutral-800 py-3 px-4 ">
                     Let{`'`}s talk
                   </a>
@@ -80,7 +97,23 @@ function Product({ product }: Props) {
             </div>
           </article>
         </div>
-        <div className="mt-12 md:mt-0">
+        <div className="mt-12 md:mt-0 ">
+          Related Products:
+          {productsList.map((productsList) => (
+            <div key={productsList._id} className="py-2 px-3 mr-4">
+              <div className="grid grid-cols-5 gap-2">
+                {productsList.image && (
+                  <Image
+                    src={urlFor(productsList.image).url()!}
+                    width={180}
+                    height={180}
+                    alt={productsList.title}
+                  />
+                )}
+                <div className="col-span-4">{productsList.metaTagTitle}</div>
+              </div>
+            </div>
+          ))}
           <BrochureVertical />
         </div>
       </main>
@@ -124,6 +157,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
      
     }`;
 
+  const productsQuery = `*[_type == "products"] | order(_createdAt asc) {
+      _id,
+      title,
+      image,
+      description,
+      metaTagTitle,
+      slug
+      }`;
+
+  const productsList = await sanityClient.fetch(productsQuery);
+
   const product = await sanityClient.fetch(query, {
     slug: params?.slug,
   });
@@ -137,6 +181,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       product,
+      productsList,
     },
     revalidate: 60,
   };

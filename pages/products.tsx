@@ -51,11 +51,11 @@ export default function Products({ products }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-6">
           {products.map((products) => (
             <div key={products._id}>
-              <div className="hover:scale-105 transition ease-in-out duration-500 grid grid-cols-3 gap-3 cursor-pointer">
+              <div className=" group grid grid-cols-3 gap-3 cursor-pointer">
                 <div className="h-full">
                   {products.image && (
                     <Image
-                      className="rounded-md"
+                      className="rounded-md group-hover:scale-105 transition ease-in-out duration-500"
                       src={urlFor(products.image).url()!}
                       alt={products.title}
                       width={180}
