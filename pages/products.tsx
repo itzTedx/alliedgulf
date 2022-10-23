@@ -57,14 +57,6 @@ const stagger2 = {
 export default function Products({ products }: Props) {
   const [filteredData, setFilteredData] = useState([]);
 
-  const handleFilter = (e) => {
-    const searchWord = e.target.value;
-    const newFilter = products.filter((title) => {
-      return title.title.includes(searchWord);
-    });
-    setFilteredData(newFilter);
-  };
-
   const meta = {
     title: "Products of Allied Gulf Construction Services",
     description:
@@ -119,7 +111,6 @@ export default function Products({ products }: Props) {
                   className="mt-3 items-center bg-neutral-200 rounded-md "
                 >
                   <TextField
-                    onChange={handleFilter}
                     label="Search products"
                     placeholder="Search Products"
                     type="text"
