@@ -3,9 +3,6 @@ import Image from "next/future/image";
 import React from "react";
 import Link from "next/link";
 
-import BrochureVertical from "../../components/BrochureVertical";
-import Header from "../../components/ProductHeader";
-
 import { sanityClient, urlFor } from "../../sanity";
 import { GetStaticProps } from "next";
 import { Product } from "../../typings";
@@ -15,6 +12,27 @@ interface Props {
   product: Product;
   productsList: [Product];
 }
+
+//Animations
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: { y: 60, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.3, ease: easing },
+  },
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delay: 0.5,
+    },
+  },
+};
 
 function Product({ product, productsList }: Props) {
   return (
@@ -39,35 +57,39 @@ function Product({ product, productsList }: Props) {
         <meta property="og:description" content={product.description} />
         <meta property="og:image" content={urlFor(product.image).url()!} />
       </Head>
-      <div className="overflow-x-hidden">
-        <motion.div
+      <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
+        <motion.main
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          transition={{ delay: 0.1 }}
+          className=""
         >
-          <main className="">
-            <div className="md:h-[95vh] w-full grid grid-cols-1 md:grid-cols-2 grid-flow-row  md:items-center md:justify-items-center md:justify-center">
+          <div className="md:h-[95vh] w-full grid grid-cols-1 md:grid-cols-2 grid-flow-row  md:items-center md:justify-items-center md:justify-center">
+            <motion.div
+              initial={{ x: 60, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
               {product.image && (
-                <motion.div
-                  initial={{ x: 0 }}
-                  animate={{ x: [10, 0, 0] }}
-                  exit={{ x: 0 }}
-                >
-                  <Image
-                    src={urlFor(product.image).url()!}
-                    alt={product.title}
-                    width={200}
-                    height={262}
-                    priority
-                    className="w-6/12 rounded-lg hidden md:block"
-                  />
-                </motion.div>
+                <Image
+                  src={urlFor(product.image).url()!}
+                  alt={product.title}
+                  width={400}
+                  height={462}
+                  priority
+                  className="scale-100 rounded-lg hidden md:block"
+                />
               )}
+            </motion.div>
 
-              <div className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0">
-                <div className="space-y-3 py-12 md:py-0">
-                  <Link href="/products-test">
-                    <a className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 hov">
+            <motion.div
+              variants={stagger}
+              className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0"
+            >
+              <div className="space-y-3 py-12 md:py-0">
+                <Link href="/products">
+                  <motion.div variants={fadeInUp}>
+                    <a className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer">
                       <div className="h-4 w-4 fill-neutral-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -78,23 +100,30 @@ function Product({ product, productsList }: Props) {
                       </div>
                       Back to products
                     </a>
-                  </Link>
-                  {product.image && (
-                    <Image
-                      src={urlFor(product.image).url()!}
-                      alt={product.title}
-                      width={200}
-                      height={262}
-                      priority
-                      className="w-6/12 rounded-lg border border-white md:hidden"
-                    />
-                  )}
-                  <h1 className="text-2xl md:text-3xl font-bold text-sky-900 pt-8">
-                    {product.title}
-                  </h1>
-                  <div className="max-w-lg text-justify">
-                    <p className="mb-12">{product.description}</p>
-                    <div className="flex items-center flex-col md:flex-row gap-1 md:gap-3">
+                  </motion.div>
+                </Link>
+                {product.image && (
+                  <Image
+                    src={urlFor(product.image).url()!}
+                    alt={product.title}
+                    width={200}
+                    height={262}
+                    priority
+                    className="w-6/12 rounded-lg border border-white md:hidden"
+                  />
+                )}
+                <motion.h1
+                  variants={fadeInUp}
+                  className="text-2xl md:text-3xl font-bold text-sky-900 pt-8"
+                >
+                  {product.title}
+                </motion.h1>
+                <div className="max-w-lg text-justify">
+                  <motion.p variants={fadeInUp} className="mb-12">
+                    {product.description}
+                  </motion.p>
+                  <div className="flex items-center flex-col md:flex-row gap-1 md:gap-3">
+                    <motion.div variants={fadeInUp}>
                       <Link
                         href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
                       >
@@ -102,28 +131,33 @@ function Product({ product, productsList }: Props) {
                           Order Now
                         </a>
                       </Link>
-                      <h6 className="font-light text-sm">or</h6>
-                      <div className="">
-                        <Link
-                          href="/Company-profile-agcs.pdf"
-                          rel="noopener noreferrer"
+                    </motion.div>
+                    <motion.h6
+                      variants={fadeInUp}
+                      className="font-light text-sm"
+                    >
+                      or
+                    </motion.h6>
+                    <motion.div variants={fadeInUp}>
+                      <Link
+                        href="/Company-profile-agcs.pdf"
+                        rel="noopener noreferrer"
+                      >
+                        <a
+                          target="_blank"
+                          className=" text-sky-600 hover:text-sky-500 font-light"
                         >
-                          <a
-                            target="_blank"
-                            className=" text-sky-600 hover:text-sky-500 font-light"
-                          >
-                            Download our brochure
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
+                          Download our brochure
+                        </a>
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
               </div>
-            </div>
-          </main>
-        </motion.div>
-      </div>
+            </motion.div>
+          </div>
+        </motion.main>
+      </motion.div>
     </>
   );
 }
