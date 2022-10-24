@@ -355,7 +355,7 @@ export default function Products({ products }: Props) {
         </motion.div>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <FloatingWhatsApp
-            phoneNumber="919025625794"
+            phoneNumber="97334685656"
             accountName="Allied Gulf Constructions"
             allowEsc
             allowClickAway
