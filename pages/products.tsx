@@ -14,6 +14,7 @@ import {
 import { motion } from "framer-motion";
 import { TextField } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 import { sanityClient, urlFor } from "../sanity";
 import { Product } from "../typings";
@@ -146,12 +147,14 @@ export default function Products({ products }: Props) {
                     {searchTerm.length == 0 ? (
                       ""
                     ) : (
-                      <div>
+                      <div className="border-neutral-400 ">
                         <div className="relative">
-                          <div className="mt-1 border border-neutral-400 absolute min-h-fit max-h-64 overflow-hidden overflow-y-auto bg-neutral-100 w-full rounded-md pb-2">
-                            <p className="text-[12px] bg-neutral-200 text-neutral-500 font-light px-3 py-1">
+                          <div className="absolute mt-1 w-full">
+                            <p className="text-[10px] bg-neutral-200 text-neutral-500 min-w-full px-3 py-1 rounded-md rounded-b-none border border-b-0 border-neutral-300">
                               Search Results...
                             </p>
+                          </div>
+                          <div className="mt-6 absolute min-h-fit max-h-64 overflow-hidden overflow-y-auto bg-neutral-100 w-full pb-2 rounded-md rounded-t-none border-neutral-300 border border-t-0">
                             {products
                               .filter((val) => {
                                 if (searchTerm == "") {
@@ -349,6 +352,19 @@ export default function Products({ products }: Props) {
               ))}
             </motion.div>
           </div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <FloatingWhatsApp
+            phoneNumber="919025625794"
+            accountName="Allied Gulf Constructions"
+            allowEsc
+            allowClickAway
+            notification
+            notificationSound
+            notificationDelay={2}
+            buttonStyle={{ backgroundColor: "#1A6EA6" }}
+            avatar="/apple-touch-icon.png"
+          />
         </motion.div>
       </div>
     </>

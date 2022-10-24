@@ -147,6 +147,50 @@ div.question::after {
   );
 }
 
+/*Whatsapp Integration*/
+.styles-module_chatHeader__gaeOA,
+.styles-module_message__Z9MOV {
+  background-color: #1a6ea6 !important;
+}
+
+.styles-module_triangle__K9ViC {
+  border-color: transparent #1a6ea6 transparent transparent !important;
+}
+
+.styles-module_chatHeader__gaeOA .styles-module_avatar__afcc4:after {
+  content: "";
+  width: 12px !important;
+  height: 12px !important;
+  background: #26a8e4 !important;
+  bottom: 7px !important;
+  right: 9px !important;
+}
+
+.styles-module_whatsappChatBox__MdQ5U {
+  font-family: "Roboto", sans-serif;
+}
+
+.styles-module_chatBody__VBxQH .styles-module_accountName__20AXD,
+.styles-module_chatBody__VBxQH .styles-module_messageBody__9-hwo,
+.styles-module_chatBody__VBxQH .styles-module_messageTime__MIwoR {
+  color: #e2e2e2 !important;
+}
+
+.styles-module_notificationIndicator__gVmjV {
+  border-radius: 50%;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: white;
+  background-color: #ff5454;
+  padding: 1px !important;
+  text-align: center;
+  /* line-height: 14px; */
+  width: 16px !important;
+  height: 16px !important;
+  position: absolute;
+  top: -3px !important;
+  right: 0px;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
