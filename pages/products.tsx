@@ -148,8 +148,8 @@ export default function Products({ products }: Props) {
                     ) : (
                       <div>
                         <div className="relative">
-                          <div className="mt-1 border border-neutral-400 absolute min-h-fit max-h-64 overflow-hidden overflow-y-auto bg-neutral-200 w-full rounded-md pb-2">
-                            <p className="text-[12px] bg-neutral-300 text-neutral-500 font-light px-3 py-1">
+                          <div className="mt-1 border border-neutral-400 absolute min-h-fit max-h-64 overflow-hidden overflow-y-auto bg-neutral-100 w-full rounded-md pb-2">
+                            <p className="text-[12px] bg-neutral-200 text-neutral-500 font-light px-3 py-1">
                               Search Results...
                             </p>
                             {products
