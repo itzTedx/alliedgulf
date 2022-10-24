@@ -40,7 +40,7 @@ html {
 }
 
 .product-header {
-  background-image: url("/abstract.svg");
+  background-image: url("/abstract-bg.svg");
   background-size: cover;
   background-color: #3aaee3;
 }
@@ -196,6 +196,7 @@ div.question::after {
   position: absolute;
   top: -3px !important;
   right: 0px;
+  z-index: 200000 !important;
 }
 
 .styles-module_chatFooter__TGv0P form .styles-module_buttonSend__kXjja {
