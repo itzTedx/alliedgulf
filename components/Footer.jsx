@@ -19,14 +19,14 @@ const Footer = () => {
       <div className="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-row lg:grid-flow-col max-w-7xl mx-auto py-16 px-0 md:px-5 text-center justify-center lg:justify-between space-y-5 lg:space-y-0">
         <div className="flex flex-col justify-between lg:text-left">
           <div className="space-y-2 ">
-            <h4 className="font-bold text-sky-600">
+            <h4 className="font-bold text-sky-600 text-xl">
               Allied Gulf Construction Services W.L.L
             </h4>
             <p className="font-light text-sm w-80 mx-auto">
               For all Construction Services and Construction Specialty Materials
             </p>
           </div>
-          <div>
+          <div className="pt-6">
             <Link href="/privacypolicy">
               <a
                 className="text-xs font-thin hover:text-sky-400 transition-all duration-300"
@@ -38,11 +38,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="space-y-2">
-          <h3 className="font-bold  text-sky-600">Follow Us</h3>
+          <h3 className="font-bold text-sky-600 text-xl">Follow Us</h3>
           <SocialMedia />
         </div>
         <div className="space-y-1">
-          <h3 className="font-bold text-sky-600">Quick links</h3>
+          <h3 className="font-bold text-sky-600 text-xl">Quick links</h3>
           <div className="">
             {navigationRoutes.map((singleRoute) => {
               return (
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="space-y-2 ">
-          <h3 className="font-bold text-sky-600 lg:text-left px-0 lg:px-6">
+          <h3 className="font-bold text-sky-600 lg:text-left px-0 lg:px-6 text-xl">
             Contact
           </h3>
           <div className="lg:text-left space-y-2">

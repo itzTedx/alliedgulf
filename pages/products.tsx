@@ -93,7 +93,7 @@ export default function Products({ products }: Props) {
       </Head>
       <div className="overflow-hidden">
         <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
-          <div className="p-4 md:py-12 md:px-20 bg-sky-400">
+          <div className="p-4 md:py-12 md:px-20 product-header">
             <div className="grid md:grid-cols-12 items-center">
               <div className="col-span-8 mx-auto">
                 <motion.h1
