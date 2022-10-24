@@ -88,7 +88,7 @@ const about = () => {
                         Turnkey and Restaurant Projects, Shades, Prefab Houses /
                         Offices, M.E.P, Floorings, Skylight, Portable cabins,
                         Container Conversion, Acoustics and General Trading of
-                        Equipment,Machineries and Specialty Construction
+                        Equipment, Machineries and Specialty Construction
                         Materials.
                       </p>
                     </div>

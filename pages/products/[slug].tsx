@@ -87,7 +87,7 @@ function Product({ product, productsList }: Props) {
               className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0"
             >
               <div className="space-y-3 py-12 md:py-0">
-                <Link href="/products">
+                <Link href="/products" passHref>
                   <motion.div variants={fadeInUp}>
                     <a className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer">
                       <div className="h-4 w-4 fill-neutral-500">

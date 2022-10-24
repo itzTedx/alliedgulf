@@ -37,13 +37,15 @@ export default function ContactUs() {
       </Head>
       <div className="bg-neutral-800">
         <div className="h-80 max-w-7xl mx-auto flex flex-col justify-between p-5">
-          <div className="text-white py-8 flex flex-col gap-y-3">
-            <h1 className="text-3xl md:text-7xl font-bold">Contact us</h1>
+          <div className="text-white py-8 flex flex-col ">
+            <h2 className="text-3xl md:text-6xl font-bold">Contact us</h2>
             <p className="text-lg text-neutral-400 font-light ">
               Looking for specialty materials for your construction?
               <br />
-              Just one more step.
             </p>
+            <h1 className="text-lg text-neutral-400 font-light">
+              Just one more step.
+            </h1>
           </div>
           <div className="">
             <div className="flex gap-3 text-gray-500">
