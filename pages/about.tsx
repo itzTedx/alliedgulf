@@ -42,8 +42,6 @@ const about = () => {
               <Image
                 src="/about-wave.svg"
                 alt="Wave to better materials in bahrain"
-                objectFit="cover"
-                layout="fixed"
                 width="1920"
                 height="936"
               />
