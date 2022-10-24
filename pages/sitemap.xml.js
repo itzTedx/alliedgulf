@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-import { sanityClient, urlFor } from "../sanity";
+import { sanityClient } from "../sanity";
 
 const Sitemap = () => {
   return null;
@@ -10,7 +10,6 @@ export const getServerSideProps = async ({ res }) => {
   const BASE_URL = process.env.NEXT_PUBLIC_DOMAIN_URL; //For changing domain
 
   const staticPaths = fs
-    .readdirSync("pages")
     .filter((staticPage) => {
       return !["sitemap.xml.js", "_app.js", "_document.js", "api"].includes(
         staticPage
