@@ -54,7 +54,14 @@ const stagger2 = {
     },
   },
 };
+
+// Image Component auto height and 100% width
+const css = { maxWidth: "100%", height: "auto" };
+
 export default function Products({ products }: Props) {
+  //Search Function
+  const [searchTerm, setSearchTerm] = useState("");
+
   const meta = {
     title: "Products of Allied Gulf Construction Services",
     description:
@@ -107,8 +114,12 @@ export default function Products({ products }: Props) {
                   <form
                     action=""
                     className="mt-3 items-center bg-sky-100 rounded-md "
+                    autoComplete="off"
                   >
                     <TextField
+                      onChange={(event) => {
+                        setSearchTerm(event.target.value);
+                      }}
                       label="Search products"
                       placeholder="Search Products"
                       type="text"
@@ -120,43 +131,69 @@ export default function Products({ products }: Props) {
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <button>
-                              <div className="h-4 w-4  ">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 512 512"
-                                >
-                                  <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z" />
-                                </svg>
-                              </div>
-                            </button>
+                            <div className="h-4 w-4  ">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                              >
+                                <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z" />
+                              </svg>
+                            </div>
                           </InputAdornment>
                         ),
                       }}
                     />
-                    <div className="relative hidden">
-                      <div className="mt-1 border border-neutral-400 absolute h-64 overflow-hidden overflow-y-auto bg-neutral-200 w-full rounded-md pb-2">
-                        <p className="text-[12px] bg-neutral-300 text-neutral-500 font-light px-3 py-1">
-                          Search Results...
-                        </p>
-                        {products.map((products) => {
-                          return (
-                            <div key={products._id}>
-                              <Link
-                                href={`/products/${products.slug.current}`}
-                                aria-label={products.metaTagTitle}
-                              >
-                                <a href="">
-                                  <div className="py-3 px-3 hover:bg-white transition duration-200">
-                                    <h5>{products.title}</h5>
+                    {searchTerm.length == 0 ? (
+                      ""
+                    ) : (
+                      <div>
+                        <div className="relative">
+                          <div className="mt-1 border border-neutral-400 absolute min-h-fit max-h-64 overflow-hidden overflow-y-auto bg-neutral-200 w-full rounded-md pb-2">
+                            <p className="text-[12px] bg-neutral-300 text-neutral-500 font-light px-3 py-1">
+                              Search Results...
+                            </p>
+                            {products
+                              .filter((val) => {
+                                if (searchTerm == "") {
+                                  return val;
+                                } else if (
+                                  val.title
+                                    .toLowerCase()
+                                    .includes(searchTerm.toLowerCase())
+                                ) {
+                                  return products;
+                                }
+                              })
+                              .map((products) => {
+                                return (
+                                  <div key={products._id}>
+                                    <Link
+                                      href={`/products/${products.slug.current}`}
+                                      aria-label={products.metaTagTitle}
+                                    >
+                                      <a aria-label={products.title}>
+                                        <div className="py-3 px-3 hover:bg-white transition duration-200 flex gap-2 items-center">
+                                          <div className="">
+                                            <Image
+                                              src={
+                                                urlFor(products.image).url()!
+                                              }
+                                              width={32}
+                                              height={32}
+                                              alt={products.title}
+                                            />
+                                          </div>
+                                          <h5>{products.title}</h5>
+                                        </div>
+                                      </a>
+                                    </Link>
                                   </div>
-                                </a>
-                              </Link>
-                            </div>
-                          );
-                        })}
+                                );
+                              })}
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </form>
                 </motion.div>
               </div>

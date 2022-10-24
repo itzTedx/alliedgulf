@@ -39,10 +39,10 @@ const Navbar = () => {
                           />
                         </div>
 
-                        <div className="text-neutral-500 font-bold uppercase text-xs lg:text-lg block sm:hidden md:block py-6">
-                          <span className="text-sky-700">Allied</span> Gulf{" "}
-                          <span className="text-sky-700">construction</span>{" "}
-                          services <span className="text-sky-700">W.L.L</span>
+                        <div className="text-neutral-300 font-bold uppercase text-xs lg:text-lg block sm:hidden md:block py-6">
+                          <span className="text-sky-500">Allied</span> Gulf{" "}
+                          <span className="text-sky-500">construction</span>{" "}
+                          services <span className="text-sky-500">W.L.L</span>
                         </div>
                       </div>
                     </a>
@@ -105,6 +105,7 @@ const Navbar = () => {
                         href={`/${singleRoute}`}
                         text={singleRoute}
                         router={router}
+                        className="py-4"
                       />
                     );
                   })}
