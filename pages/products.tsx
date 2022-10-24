@@ -142,10 +142,15 @@ export default function Products({ products }: Props) {
                         {products.map((products) => {
                           return (
                             <div key={products._id}>
-                              <Link href={`/products/${products.slug.current}`}>
-                                <div className="py-3 px-3 hover:bg-white transition duration-200">
-                                  <h5>{products.title}</h5>
-                                </div>
+                              <Link
+                                href={`/products/${products.slug.current}`}
+                                aria-label={products.metaTagTitle}
+                              >
+                                <a href="">
+                                  <div className="py-3 px-3 hover:bg-white transition duration-200">
+                                    <h5>{products.title}</h5>
+                                  </div>
+                                </a>
                               </Link>
                             </div>
                           );
@@ -163,7 +168,7 @@ export default function Products({ products }: Props) {
                   src="/products-img.jpg"
                   width={634}
                   height={400}
-                  alt=""
+                  alt="Interior Works done by Allied Gulf"
                   className="rounded-md"
                 />
               </motion.div>
@@ -176,7 +181,11 @@ export default function Products({ products }: Props) {
                     href="https://www.linkedin.com/in/allied-gulf-construction-services-a4477324a/"
                     passHref
                   >
-                    <motion.a variants={fadeInUpScale} target="_blank">
+                    <motion.a
+                      variants={fadeInUpScale}
+                      target="_blank"
+                      aria-label="Follow"
+                    >
                       <FontAwesomeIcon
                         className="cursor-pointer hover:text-neutral-600 transition-all duration-300"
                         icon={faLinkedin}
@@ -185,7 +194,11 @@ export default function Products({ products }: Props) {
                     </motion.a>
                   </Link>
                   <Link href="https://www.facebook.com/agcs.bahrain/" passHref>
-                    <motion.a variants={fadeInUpScale} target="_blank">
+                    <motion.a
+                      variants={fadeInUpScale}
+                      target="_blank"
+                      aria-label="Follow"
+                    >
                       <FontAwesomeIcon
                         className="cursor-pointer hover:text-neutral-600 transition-all duration-300"
                         icon={faSquareFacebook}
@@ -197,7 +210,11 @@ export default function Products({ products }: Props) {
                     href="https://www.instagram.com/agcs.bahrain/?hl=en"
                     passHref
                   >
-                    <motion.a variants={fadeInUpScale} target="_blank">
+                    <motion.a
+                      variants={fadeInUpScale}
+                      target="_blank"
+                      aria-label="Follow"
+                    >
                       <FontAwesomeIcon
                         className="cursor-pointer hover:text-neutral-600 transition-all duration-300"
                         icon={faSquareInstagram}
@@ -206,7 +223,11 @@ export default function Products({ products }: Props) {
                     </motion.a>
                   </Link>
                   <Link href="https://twitter.com/agcsbahrain" passHref>
-                    <motion.a variants={fadeInUpScale} target="_blank">
+                    <motion.a
+                      variants={fadeInUpScale}
+                      target="_blank"
+                      aria-label="Follow"
+                    >
                       <FontAwesomeIcon
                         className="cursor-pointer hover:text-neutral-600 transition-all duration-300"
                         icon={faSquareTwitter}
@@ -218,7 +239,11 @@ export default function Products({ products }: Props) {
                     href="https://www.youtube.com/channel/UCkb5kHLLC_Ntqt8p7ZIKliA"
                     passHref
                   >
-                    <motion.a variants={fadeInUpScale} target="_blank">
+                    <motion.a
+                      variants={fadeInUpScale}
+                      target="_blank"
+                      aria-label="Follow"
+                    >
                       <FontAwesomeIcon
                         className="cursor-pointer hover:text-neutral-600 transition-all duration-300"
                         icon={faSquareYoutube}
@@ -242,44 +267,47 @@ export default function Products({ products }: Props) {
             </div>
             <motion.div
               variants={stagger1}
-              className="grid grid-cols-2 md:grid-cols-4 grid-flow-row gap-3 md:gap-6"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-flow-row gap-3 md:gap-6"
             >
               {products.map((products) => (
                 <Link
                   key={products._id}
                   href={`/products/${products.slug.current}`}
                   passHref
+                  aria-label={products.metaTagTitle}
                 >
-                  <motion.div
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <div className="hover:scale-105 grid gap-3 cursor-pointer p-4 bg-white hover:shadow-2xl hover:shadow-slate-300 transition-all">
-                      <motion.div
-                        initial={{ x: 60, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="h-full"
-                      >
-                        {products.image && (
-                          <Image
-                            className="rounded-md w-full  transition ease-in-out duration-500 "
-                            src={urlFor(products.image).url()!}
-                            alt={products.title}
-                            width={220}
-                            height={220}
-                          />
-                        )}
-                      </motion.div>
+                  <a aria-label={products.metaTagTitle}>
+                    <motion.div
+                      variants={fadeInUp}
+                      whileHover={{ scale: 1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="hover:scale-105 grid gap-3 cursor-pointer p-4 bg-white hover:shadow-2xl hover:shadow-slate-300 transition-all">
+                        <motion.div
+                          initial={{ x: 60, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: 0.3 }}
+                          className="h-full"
+                        >
+                          {products.image && (
+                            <Image
+                              className="rounded-md w-full  transition ease-in-out duration-500 "
+                              src={urlFor(products.image).url()!}
+                              alt={products.title}
+                              width={220}
+                              height={220}
+                            />
+                          )}
+                        </motion.div>
 
-                      <div className="">
-                        <h5 className="text-lg md:text-xl font-medium text-sky-800 hover:text-sky-600">
-                          {products.title}
-                        </h5>
+                        <div className="">
+                          <h5 className="text-lg md:text-xl font-medium text-sky-800 hover:text-sky-600">
+                            {products.title}
+                          </h5>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </a>
                 </Link>
               ))}
             </motion.div>
@@ -296,7 +324,8 @@ export const getServerSideProps = async () => {
     title,
     image,
     description,
-    slug
+    slug,
+    metaTagTitle
     }`;
 
   const products = await sanityClient.fetch(query);

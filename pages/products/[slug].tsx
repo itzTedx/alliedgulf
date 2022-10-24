@@ -87,9 +87,12 @@ function Product({ product, productsList }: Props) {
               className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0"
             >
               <div className="space-y-3 py-12 md:py-0">
-                <Link href="/products" passHref>
-                  <motion.div variants={fadeInUp}>
-                    <a className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer">
+                <motion.div variants={fadeInUp}>
+                  <Link href="/products" passHref>
+                    <a
+                      className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer"
+                      aria-label="Get back to products list"
+                    >
                       <div className="h-4 w-4 fill-neutral-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -100,8 +103,8 @@ function Product({ product, productsList }: Props) {
                       </div>
                       Back to products
                     </a>
-                  </motion.div>
-                </Link>
+                  </Link>
+                </motion.div>
                 {product.image && (
                   <Image
                     src={urlFor(product.image).url()!}
@@ -127,7 +130,10 @@ function Product({ product, productsList }: Props) {
                       <Link
                         href={`mailto:info@alliedgulf.me?subject=${product.title}%20-%20Order%20&body=Hi sir, I'm interested in this product can we discuss more about it%0D%0A%0D%0AName: [Your name here]%0D%0AContact: [Your contact details]%0D%0A%0D%0AProduct: ${product.title}%0D%0AQuantity:%0D%0AProject Details:%0D%0A`}
                       >
-                        <a className="py-2 px-5 rounded-lg text-sm md:text-base bg-sky-500 hover:bg-neutral-700 transition text-white">
+                        <a
+                          className="py-2 px-5 rounded-lg text-sm md:text-base bg-sky-500 hover:bg-neutral-700 transition text-white"
+                          aria-label="Enquire or Book products"
+                        >
                           Order Now
                         </a>
                       </Link>
@@ -146,6 +152,7 @@ function Product({ product, productsList }: Props) {
                         <a
                           target="_blank"
                           className=" text-sky-600 hover:text-sky-500 font-light"
+                          aria-label="Download our brochure"
                         >
                           Download our brochure
                         </a>

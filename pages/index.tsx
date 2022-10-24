@@ -57,13 +57,9 @@ export default function Home({ serviceSlider }: Props) {
       <main className="grid lg:grid-cols-2 items-center justify-items-center">
         <div className="text-center lg:text-left">
           <h1 className="font-bold text-3xl lg:text-6xl 2xl:text-7xl text-sky-700 py-3">
-            <span>
-              Diversity Services, <br />
-            </span>
-            <span>
-              Unvarying Quality, <br />
-            </span>
-            <span>Timely Delivery.</span>
+            Diversity Services, <br />
+            Unvarying Quality, <br />
+            Timely Delivery.
           </h1>
           <div className="">
             <p className="font-light text-lg">
@@ -89,12 +85,18 @@ export default function Home({ serviceSlider }: Props) {
           </div>
           <div className="font-medium text-xl lg:text-2xl space-x-1 py-6">
             <Link href="/products">
-              <a className="py-2 px-3 bg-sky-700 hover:bg-sky-600 transition hover:animate-pulse text-white">
+              <a
+                className="py-2 px-3 bg-sky-700 hover:bg-sky-600 transition hover:animate-pulse text-white"
+                aria-label="Products of AGCS"
+              >
                 Products
               </a>
             </Link>
             <Link href="/contact">
-              <a className="py-[7px] px-3 text-sky-700 border-2 hover:bg-sky-600 transition hover:text-white hover:animate-pulse border-sky-700">
+              <a
+                className="py-[7px] px-3 text-sky-700 border-2 hover:bg-sky-600 transition hover:text-white hover:animate-pulse border-sky-700"
+                aria-label="Contact us now"
+              >
                 Contact us
               </a>
             </Link>
@@ -242,7 +244,10 @@ export default function Home({ serviceSlider }: Props) {
         </div>
         <div className="p-12">
           <Link href="/services">
-            <a className=" py-2 px-3 rounded-md hover:bg-sky-600 bg-sky-700 transition ease-out duration-700 text-white">
+            <a
+              className=" py-2 px-3 rounded-md hover:bg-sky-600 bg-sky-700 transition ease-out duration-700 text-white"
+              aria-label="wide variety of services offerings"
+            >
               View More
             </a>
           </Link>
@@ -273,6 +278,7 @@ export default function Home({ serviceSlider }: Props) {
                   className="text-sky-700 hover:text-sky-600 underline underline-offset-2 transition-all link-arrow duration-300 hover:pl-4"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Take a look at our new products"
                 >
                   Take a look at our new products:
                 </a>

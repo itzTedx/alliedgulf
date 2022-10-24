@@ -13,7 +13,10 @@ const Questions = () => {
         </p>
         <div className="pb-3">
           <Link href="/contact">
-            <a className="bg-white text-black px-4 py-2 hover:bg-neutral-800 hover:text-white transition duration-300 uppercase font-medium text-sm">
+            <a
+              className="bg-white text-black px-4 py-2 hover:bg-neutral-800 hover:text-white transition duration-300 uppercase font-medium text-sm"
+              aria-label="Just call us now"
+            >
               Contact us
             </a>
           </Link>
