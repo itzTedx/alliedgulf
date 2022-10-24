@@ -91,13 +91,13 @@ export default function Products({ products }: Props) {
         <meta property="og:image" content={meta.image} />
         <meta property="og:image:alt" content={meta.description} />
       </Head>
-      <div className="overflow-x-hidden">
+      <div className="overflow-hidden">
         <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
-          <div className="p-4 md:py-12 md:px-24 bg-sky-400">
+          <div className="p-4 md:py-12 md:px-20 bg-sky-400">
             <div className="grid md:grid-cols-12 items-center">
               <div className="col-span-8 mx-auto">
                 <motion.h1
-                  initial={{ x: -60, opacity: 0 }}
+                  initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
                   className="font-light text-2xl md:leading-10 text-neutral-800"
@@ -108,7 +108,7 @@ export default function Products({ products }: Props) {
                   </span>
                 </motion.h1>
                 <motion.div
-                  initial={{ x: -60, opacity: 0 }}
+                  initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
                 >
@@ -324,7 +324,7 @@ export default function Products({ products }: Props) {
                     >
                       <div className="hover:scale-105 grid gap-3 cursor-pointer p-4 bg-white hover:shadow-2xl hover:shadow-slate-300 transition-all">
                         <motion.div
-                          initial={{ x: 60, opacity: 0 }}
+                          initial={{ x: 20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 0.3 }}
                           className="h-full"
