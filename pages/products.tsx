@@ -217,10 +217,7 @@ export default function Products({ products }: Props) {
                   variants={stagger2}
                   className="flex flex-col gap-2 justify-center text-2xl text-sky-200 "
                 >
-                  <Link
-                    href="https://www.linkedin.com/in/allied-gulf-construction-services-a4477324a/"
-                    passHref
-                  >
+                  <Link href="/linkedin" passHref>
                     <motion.a
                       variants={fadeInUpScale}
                       target="_blank"
@@ -233,7 +230,7 @@ export default function Products({ products }: Props) {
                       />
                     </motion.a>
                   </Link>
-                  <Link href="https://www.facebook.com/agcs.bahrain/" passHref>
+                  <Link href="/facebook" passHref>
                     <motion.a
                       variants={fadeInUpScale}
                       target="_blank"
@@ -246,10 +243,7 @@ export default function Products({ products }: Props) {
                       />
                     </motion.a>
                   </Link>
-                  <Link
-                    href="https://www.instagram.com/agcs.bahrain/?hl=en"
-                    passHref
-                  >
+                  <Link href="/instagram" passHref>
                     <motion.a
                       variants={fadeInUpScale}
                       target="_blank"
@@ -262,7 +256,7 @@ export default function Products({ products }: Props) {
                       />
                     </motion.a>
                   </Link>
-                  <Link href="https://twitter.com/agcsbahrain" passHref>
+                  <Link href="/twitter" passHref>
                     <motion.a
                       variants={fadeInUpScale}
                       target="_blank"
@@ -275,10 +269,7 @@ export default function Products({ products }: Props) {
                       />
                     </motion.a>
                   </Link>
-                  <Link
-                    href="https://www.youtube.com/channel/UCkb5kHLLC_Ntqt8p7ZIKliA"
-                    passHref
-                  >
+                  <Link href="/youtube" passHref>
                     <motion.a
                       variants={fadeInUpScale}
                       target="_blank"
@@ -352,19 +343,6 @@ export default function Products({ products }: Props) {
               ))}
             </motion.div>
           </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <FloatingWhatsApp
-            phoneNumber="97334685656"
-            accountName="Allied Gulf Constructions"
-            allowEsc
-            allowClickAway
-            notification
-            notificationSound
-            notificationDelay={2}
-            buttonStyle={{ backgroundColor: "#1A6EA6" }}
-            avatar="/apple-touch-icon.png"
-          />
         </motion.div>
       </div>
     </>

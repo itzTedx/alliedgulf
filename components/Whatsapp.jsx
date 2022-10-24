@@ -13,7 +13,7 @@ const Whatsapp = () => {
           allowClickAway
           notification
           notificationSound
-          notificationDelay={2}
+          notificationDelay={10}
           buttonStyle={{ backgroundColor: "#1A6EA6" }}
           avatar="/apple-touch-icon.png"
         />

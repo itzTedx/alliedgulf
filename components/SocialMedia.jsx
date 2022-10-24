@@ -12,10 +12,7 @@ import Link from "next/link";
 const SocialMedia = () => {
   return (
     <div className="flex gap-3 justify-center text-2xl">
-      <Link
-        href="https://www.linkedin.com/in/allied-gulf-construction-services-a4477324a/"
-        passHref
-      >
+      <Link href="/linkedin" passHref>
         <a target="_blank" alt="Linkedin">
           <FontAwesomeIcon
             className="cursor-pointer hover:text-sky-500 transition-all duration-300"
@@ -25,7 +22,7 @@ const SocialMedia = () => {
           />
         </a>
       </Link>
-      <Link href="https://www.facebook.com/agcs.bahrain/" passHref>
+      <Link href="/facebook" passHref>
         <a target="_blank" alt="Facebook">
           <FontAwesomeIcon
             className="cursor-pointer hover:text-sky-500 transition-all duration-300"
@@ -35,7 +32,7 @@ const SocialMedia = () => {
           />
         </a>
       </Link>
-      <Link href="https://www.instagram.com/agcs.bahrain/?hl=en" passHref>
+      <Link href="/instagram" passHref>
         <a target="_blank" alt="Instagram">
           <FontAwesomeIcon
             className="cursor-pointer hover:text-sky-500 transition-all duration-300"
@@ -45,7 +42,7 @@ const SocialMedia = () => {
           />
         </a>
       </Link>
-      <Link href="https://twitter.com/agcsbahrain" passHref>
+      <Link href="twitter" passHref>
         <a target="_blank" alt="Twitter">
           <FontAwesomeIcon
             className="cursor-pointer hover:text-sky-500 transition-all duration-300"
@@ -55,10 +52,7 @@ const SocialMedia = () => {
           />
         </a>
       </Link>
-      <Link
-        href="https://www.youtube.com/channel/UCkb5kHLLC_Ntqt8p7ZIKliA"
-        passHref
-      >
+      <Link href="youtube" passHref>
         <a target="_blank" alt="Subscribe Now">
           <FontAwesomeIcon
             className="cursor-pointer hover:text-sky-500 transition-all duration-300"
