@@ -191,6 +191,17 @@ div.question::after {
   top: -3px !important;
   right: 0px;
 }
+
+.styles-module_chatFooter__TGv0P form .styles-module_buttonSend__kXjja {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  padding-left: 6px;
+  background: #2e2e2e;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
