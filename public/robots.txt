@@ -1,5 +1,0 @@
-
-User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
-Sitemap: https://alliedgulf.vercel.app/sitemap.xml
