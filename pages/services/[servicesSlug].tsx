@@ -9,6 +9,7 @@ import { sanityClient, urlFor } from "../../sanity";
 import { GetStaticProps } from "next";
 import { Service } from "../../typings";
 import { motion } from "framer-motion";
+import Services from "../services";
 
 interface Props {
   service: Service;
@@ -87,7 +88,7 @@ function Service({ service }: Props) {
                   width={400}
                   height={462}
                   priority
-                  className="scale-100 rounded-lg hidden md:block"
+                  className="scale-100 w-full rounded-lg hidden md:block"
                 />
               )}
             </motion.div>
@@ -96,11 +97,11 @@ function Service({ service }: Props) {
               variants={stagger}
               className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0"
             >
-              <div className="space-y-3 py-12 md:py-0">
-                <motion.div variants={fadeInUp}>
+              <div className="space-y-2 py-6 md:py-0">
+                <motion.div variants={fadeInUp} className="mb-6">
                   <Link href="/services" passHref>
                     <a
-                      className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer"
+                      className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer py-1"
                       aria-label="Get back to services list"
                     >
                       <div className="h-4 w-4 fill-neutral-500">
@@ -115,22 +116,27 @@ function Service({ service }: Props) {
                     </a>
                   </Link>
                 </motion.div>
-                {service.servicesImage && (
-                  <Image
-                    src={urlFor(service.servicesImage).url()!}
-                    alt={service.servicesTitle}
-                    width={200}
-                    height={262}
-                    priority
-                    className="w-6/12 rounded-lg border border-white md:hidden"
-                  />
-                )}
-                <motion.h1
+                <div className="pb-4">
+                  {service.servicesImage && (
+                    <Image
+                      src={urlFor(service.servicesImage).url()!}
+                      alt={service.servicesTitle}
+                      width={200}
+                      height={262}
+                      priority
+                      className="w-full rounded-lg border border-white md:hidden"
+                    />
+                  )}
+                </div>
+                <h1 className="px-3 py-1 text-xs bg-sky-200 w-fit rounded-md">
+                  {service.metaTagTitle}
+                </h1>
+                <motion.h2
                   variants={fadeInUp}
-                  className="text-2xl md:text-3xl font-bold text-sky-900 pt-8"
+                  className="text-2xl md:text-5xl font-bold text-sky-900"
                 >
                   {service.servicesTitle}
-                </motion.h1>
+                </motion.h2>
                 <div className="max-w-lg text-justify">
                   <motion.p variants={fadeInUp} className="mb-12">
                     {service.servicesDescription}
@@ -148,7 +154,7 @@ function Service({ service }: Props) {
                     </motion.div>
                     <motion.h6
                       variants={fadeInUp}
-                      className="font-light text-sm"
+                      className="font-light text-sm pt-3 md:pt-0"
                     >
                       or
                     </motion.h6>
