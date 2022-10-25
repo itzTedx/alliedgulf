@@ -162,28 +162,28 @@ export default function Services({ services }: Props) {
                                   return services;
                                 }
                               })
-                              .map((products) => {
+                              .map((services) => {
                                 return (
-                                  <div key={products._id}>
+                                  <div key={services._id}>
                                     <Link
-                                      href={`/products/${products.servicesSlug.current}`}
-                                      aria-label={products.metaTagTitle}
+                                      href={`/services/${services.servicesSlug.current}`}
+                                      aria-label={services.metaTagTitle}
                                     >
-                                      <a aria-label={products.servicesTitle}>
+                                      <a aria-label={services.servicesTitle}>
                                         <div className="py-3 px-3 hover:bg-white transition duration-200 flex gap-2 items-center">
                                           <div className="">
                                             <Image
                                               src={
                                                 urlFor(
-                                                  products.servicesImage
+                                                  services.servicesImage
                                                 ).url()!
                                               }
                                               width={32}
                                               height={32}
-                                              alt={products.servicesTitle}
+                                              alt={services.servicesTitle}
                                             />
                                           </div>
-                                          <h5>{products.servicesTitle}</h5>
+                                          <h5>{services.servicesTitle}</h5>
                                         </div>
                                       </a>
                                     </Link>
@@ -316,7 +316,7 @@ export default function Services({ services }: Props) {
                         >
                           {services.servicesImage && (
                             <Image
-                              className="h-52 w-full group-hover:scale-105 transition ease-in-out duration-500 object-cover"
+                              className="h-44 sm:h-52 md:h-52 w-full group-hover:scale-105 transition ease-in-out duration-500 object-cover"
                               src={urlFor(services.servicesImage).url()!}
                               alt={services.servicesTitle}
                               width={400}
