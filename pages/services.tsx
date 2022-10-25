@@ -316,7 +316,7 @@ export default function Services({ services }: Props) {
                         >
                           {services.servicesImage && (
                             <Image
-                              className="h-56 w-full group-hover:scale-105 transition ease-in-out duration-500 object-cover"
+                              className="h-52 w-full group-hover:scale-105 transition ease-in-out duration-500 object-cover"
                               src={urlFor(services.servicesImage).url()!}
                               alt={services.servicesTitle}
                               width={400}
