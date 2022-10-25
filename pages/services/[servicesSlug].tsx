@@ -128,7 +128,7 @@ function Service({ service }: Props) {
                     />
                   )}
                 </div>
-                <h1 className="px-3 py-1 text-xs bg-sky-200 w-fit rounded-md">
+                <h1 className="px-3 py-1 text-[9px] md:text-xs bg-sky-200 w-fit rounded-md">
                   {service.metaTagTitle}
                 </h1>
                 <motion.h2
