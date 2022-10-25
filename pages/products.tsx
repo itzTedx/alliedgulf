@@ -143,7 +143,7 @@ export default function Products({ products }: Props) {
                       ""
                     ) : (
                       <div className="border-neutral-400 ">
-                        <div className="relative">
+                        <div className="relative z-[1000]">
                           <div className="absolute mt-1 w-full">
                             <p className="text-[10px] bg-neutral-200 text-neutral-500 min-w-full px-3 py-1 rounded-md rounded-b-none border border-b-0 border-neutral-300">
                               Search Results...

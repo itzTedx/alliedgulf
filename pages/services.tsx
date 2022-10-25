@@ -89,7 +89,7 @@ export default function Services({ services }: Props) {
       </Head>
       <div className="overflow-hidden">
         <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
-          <div className="p-4 md:py-12 md:px-20 services-header bg-cyan-500">
+          <div className="p-4 md:py-12 md:px-20 services-header bg-sky-500 z-50">
             <div className="grid md:grid-cols-12 items-center">
               <div className="col-span-8 mx-auto">
                 <motion.h1
@@ -143,7 +143,7 @@ export default function Services({ services }: Props) {
                       ""
                     ) : (
                       <div className="border-neutral-400 ">
-                        <div className="relative">
+                        <div className="relative z-[1000]">
                           <div className="absolute mt-1 w-full">
                             <p className="text-[10px] bg-neutral-200 text-neutral-500 min-w-full px-3 py-1 rounded-md rounded-b-none border border-b-0 border-neutral-300">
                               Search Results...
@@ -283,8 +283,8 @@ export default function Services({ services }: Props) {
               </div>
             </div>
           </div>
-          <div className="container mx-auto bg-white shadow-lg">
-            <div className="py-3 md:py-6">
+          <div className="container mx-auto py-6 md:py-12 z-10">
+            <div className="pt-3 md:pt-8 px-3 md:px-8">
               <p className="font-thin text-xl">
                 Looking for Specialty Materials?
               </p>
@@ -294,7 +294,7 @@ export default function Services({ services }: Props) {
             </div>
             <motion.div
               variants={stagger1}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-3 p-3 md:p-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-3 px-3 md:px-8 pt-6"
             >
               {services.map((services) => (
                 <Link
