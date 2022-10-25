@@ -39,7 +39,7 @@ const Navbar = () => {
                           />
                         </div>
 
-                        <div className="text-neutral-300 font-bold uppercase text-xs lg:text-lg block sm:hidden md:block py-6">
+                        <div className="text-neutral-300 font-bold uppercase text-sm lg:text-lg block sm:hidden md:block pl-3 py-6">
                           <span className="text-sky-500">Allied</span> Gulf{" "}
                           <span className="text-sky-500">construction</span>{" "}
                           services <span className="text-sky-500">W.L.L</span>
@@ -49,19 +49,18 @@ const Navbar = () => {
                   </Link>
                   <div className="inset-y-0 left-0 flex items-center sm:hidden">
                     {/* Mobile menu button*/}
-                    <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 hover:bg-sky-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400  hover:text-white ">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <Hamburger
-                          size={24}
+                          size={26}
                           direction="left"
                           duration={0.6}
                           easing="ease-in-out"
-                          className="w-8"
                         />
                       ) : (
                         <Hamburger
-                          size={24}
+                          size={26}
                           direction="right"
                           duration={0.6}
                           easing="ease-in-out"
@@ -138,7 +137,7 @@ function NavigationLink({ href, text, router }) {
         href={href === "/home" ? "/" : href}
         className={`${
           isActive && "bg-sky-700 text-white"
-        }  hover:bg-sky-800 hover:text-white capitalize px-3 py-2 text-sm font-medium`}
+        }  hover:bg-sky-800 hover:text-white capitalize px-3 py-4 text-sm font-medium`}
       >
         {text}
       </a>

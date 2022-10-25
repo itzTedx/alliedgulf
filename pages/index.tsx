@@ -103,7 +103,7 @@ export default function Home({ serviceSlider }: Props) {
           </motion.div>
           <motion.div
             variants={stagger1}
-            className="font-medium text-xl lg:text-2xl space-x-4 py-6 flex "
+            className="font-medium text-xl lg:text-2xl space-x-4 py-6 flex justify-center md:justify-start"
           >
             <Link href="/products" passHref>
               <motion.div
