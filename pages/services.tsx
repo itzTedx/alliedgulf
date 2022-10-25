@@ -284,6 +284,14 @@ export default function Services({ services }: Props) {
             </div>
           </div>
           <div className="container mx-auto bg-white shadow-lg">
+            <div className="py-3 md:py-6">
+              <p className="font-thin text-xl">
+                Looking for Specialty Materials?
+              </p>
+              <h2 className="font-light text-4xl ">
+                Our <span className="font-medium text-sky-700">Services</span>
+              </h2>
+            </div>
             <motion.div
               variants={stagger1}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-3 p-3 md:p-8"
