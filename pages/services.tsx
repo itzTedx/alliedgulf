@@ -117,8 +117,7 @@ export default function Services({ services }: Props) {
                       onChange={(event) => {
                         setSearchTerm(event.target.value);
                       }}
-                      label="Search products"
-                      placeholder="Search Products"
+                      label="Search services"
                       type="text"
                       name="search"
                       variant="outlined"

@@ -118,7 +118,6 @@ export default function Products({ products }: Props) {
                         setSearchTerm(event.target.value);
                       }}
                       label="Search products"
-                      placeholder="Search Products"
                       type="text"
                       name="search"
                       variant="outlined"

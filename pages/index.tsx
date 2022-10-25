@@ -5,7 +5,9 @@ import Link from "next/link";
 import Featured from "../components/Featured";
 import Questions from "../components/Questions";
 import Slider from "../components/Slider";
-import WebBanner from "../components/WebBanner";
+
+import AnimatedHomeHead from "../components/Animation/AnimatedHomeHead";
+import { motion } from "framer-motion";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,6 +28,19 @@ interface Props {
 }
 
 export default function Home({ serviceSlider }: Props) {
+  const easing = [0.6, -0.05, 0.01, 0.99];
+
+  const fadeInUp = {
+    initial: { y: 60, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: easing } },
+  };
+  const stagger1 = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
   const meta = {
     title: "Allied Gulf Construction Services W.L.L - Bahrain",
     description:
@@ -57,11 +72,14 @@ export default function Home({ serviceSlider }: Props) {
       <main className="grid lg:grid-cols-2 items-center justify-items-center">
         <div className="text-center lg:text-left">
           <h1 className="font-bold text-3xl lg:text-6xl 2xl:text-7xl text-sky-700 py-3">
-            Diversity Services, <br />
-            Unvarying Quality, <br />
-            Timely Delivery.
+            <AnimatedHomeHead text="Diversity Services," delay="0.04" />
           </h1>
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.5 }}
+            className=""
+          >
             <p className="font-light text-lg">
               For all Construction Services and Construction Specialty Materials
             </p>
@@ -82,25 +100,42 @@ export default function Home({ serviceSlider }: Props) {
                 Equipment,Machineries and Specialty Construction Materials.
               </p>
             </div>
-          </div>
-          <div className="font-medium text-xl lg:text-2xl space-x-1 py-6">
-            <Link href="/products">
-              <a
-                className="py-2 px-3 bg-sky-700 hover:bg-sky-600 transition hover:animate-pulse text-white"
-                aria-label="Products of AGCS"
+          </motion.div>
+          <motion.div
+            variants={stagger1}
+            className="font-medium text-xl lg:text-2xl space-x-1 py-6 flex"
+          >
+            <Link href="/products" passHref>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.6 }}
+                className=""
               >
-                Products
-              </a>
+                <a
+                  className="py-2 px-3 bg-sky-700 hover:bg-sky-600 transition hover:animate-pulse text-white"
+                  aria-label="Products of AGCS"
+                >
+                  Products
+                </a>
+              </motion.div>
             </Link>
-            <Link href="/contact">
-              <a
-                className="py-[7px] px-3 text-sky-700 border-2 hover:bg-sky-600 transition hover:text-white hover:animate-pulse border-sky-700"
-                aria-label="Contact us now"
+            <Link href="/contact" passHref>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.7 }}
+                className=""
               >
-                Contact us
-              </a>
+                <a
+                  className="py-[7px] px-3 text-neutral-700 font-normal transition hover:text-sky-600"
+                  aria-label="Contact us now"
+                >
+                  Contact us
+                </a>
+              </motion.div>
             </Link>
-          </div>
+          </motion.div>
         </div>
         <div className="lg:pl-12 ">
           <Slider />
