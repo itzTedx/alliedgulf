@@ -189,7 +189,7 @@ export default function Home({ serviceSlider }: Props) {
           </h3>
           <p className="font-light text-sm"> we do for you</p>
         </div>
-        <div className="w-full lg:mx-auto lg:max-w-7xl">
+        <div className="w-full lg:mx-auto lg:max-w-7xl px-3 md:px-0">
           <Swiper
             loop={true}
             autoplay={{

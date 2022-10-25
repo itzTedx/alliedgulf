@@ -15,8 +15,7 @@ function MyApp({ Component, pageProps }) {
           color="linear-gradient(90deg, #00b4d8 0%, #219ebc 100%);"
           startPosition={0.2}
           stopDelayMs={100}
-          height={5}
-          showOnShallow={true}
+          height={3}
           options={{ easing: "ease-in-out", speed: 200 }}
         />
         <AnimatePresence mode="wait">

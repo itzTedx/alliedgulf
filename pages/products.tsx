@@ -14,7 +14,6 @@ import {
 import { motion } from "framer-motion";
 import { TextField } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
-import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 import { sanityClient, urlFor } from "../sanity";
 import { Product } from "../typings";
@@ -55,9 +54,6 @@ const stagger2 = {
     },
   },
 };
-
-// Image Component auto height and 100% width
-const css = { maxWidth: "100%", height: "auto" };
 
 export default function Products({ products }: Props) {
   //Search Function

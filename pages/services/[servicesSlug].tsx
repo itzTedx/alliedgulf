@@ -2,17 +2,38 @@ import Head from "next/head";
 import Image from "next/future/image";
 import React from "react";
 import Banner from "../../components/Banner";
+import Link from "next/link";
 import BrochureVertical from "../../components/BrochureVertical";
 
 import { sanityClient, urlFor } from "../../sanity";
 import { GetStaticProps } from "next";
 import { Service } from "../../typings";
-import Header from "../../components/ServiceHeader";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface Props {
   service: Service;
 }
+
+//Animations
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: { y: 60, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.3, ease: easing },
+  },
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delay: 0.5,
+    },
+  },
+};
 
 function Service({ service }: Props) {
   return (
@@ -47,41 +68,111 @@ function Service({ service }: Props) {
           content={urlFor(service.servicesImage).url()!}
         />
       </Head>
+      <motion.main initial="initial" animate="animate" exit={{ opacity: 0 }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+        >
+          <div className="md:h-[95vh] w-full grid grid-cols-1 md:grid-cols-2 grid-flow-row  md:items-center md:justify-items-center md:justify-center">
+            <motion.div
+              initial={{ x: 60, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              {service.servicesImage && (
+                <Image
+                  src={urlFor(service.servicesImage).url()!}
+                  alt={service.servicesTitle}
+                  width={400}
+                  height={462}
+                  priority
+                  className="scale-100 rounded-lg hidden md:block"
+                />
+              )}
+            </motion.div>
 
-      <main className="container mx-auto grid md:grid-cols-4 bg-white">
-        <div className="md:col-span-3 flex">
-          <article className=" mx-5 pt-4 md:p-12">
-            <div className="flex md:gap-12 flex-col md:flex-row">
-              <div>
+            <motion.div
+              variants={stagger}
+              className="md:h-[95vh] w-full bg-white flex items-center justify-center px-3 md:px-0"
+            >
+              <div className="space-y-3 py-12 md:py-0">
+                <motion.div variants={fadeInUp}>
+                  <Link href="/services" passHref>
+                    <a
+                      className="text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300 text-neutral-500 cursor-pointer"
+                      aria-label="Get back to services list"
+                    >
+                      <div className="h-4 w-4 fill-neutral-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path d="M360 224L272 224v-56c0-9.531-5.656-18.16-14.38-22C248.9 142.2 238.7 143.9 231.7 150.4l-96 88.75C130.8 243.7 128 250.1 128 256.8c.3125 7.781 2.875 13.25 7.844 17.75l96 87.25c7.031 6.406 17.19 8.031 25.88 4.188s14.28-12.44 14.28-21.94l-.002-56L360 288C373.3 288 384 277.3 384 264v-16C384 234.8 373.3 224 360 224zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z" />
+                        </svg>
+                      </div>
+                      Back to services
+                    </a>
+                  </Link>
+                </motion.div>
                 {service.servicesImage && (
                   <Image
                     src={urlFor(service.servicesImage).url()!}
                     alt={service.servicesTitle}
-                    width={534}
+                    width={200}
                     height={262}
                     priority
+                    className="w-6/12 rounded-lg border border-white md:hidden"
                   />
                 )}
-              </div>
-              <div className="pt-4 max-w-md text-justify">
-                <h1 className="text-2xl md:text-3xl font-bold text-sky-700 pb-5">
+                <motion.h1
+                  variants={fadeInUp}
+                  className="text-2xl md:text-3xl font-bold text-sky-900 pt-8"
+                >
                   {service.servicesTitle}
-                </h1>
-                <p>{service.servicesDescription}</p>
-                <div className="py-3">
-                  <Link href="/services">
-                    <a className="underline text-sky-700 hover:text-sky-500">
-                      Take a look at our other services
-                    </a>
-                  </Link>
+                </motion.h1>
+                <div className="max-w-lg text-justify">
+                  <motion.p variants={fadeInUp} className="mb-12">
+                    {service.servicesDescription}
+                  </motion.p>
+                  <div className="flex items-center flex-col md:flex-row gap-1 md:gap-3">
+                    <motion.div variants={fadeInUp}>
+                      <Link href="/contact">
+                        <a
+                          className="py-2 px-5 rounded-lg text-sm md:text-base bg-sky-500 hover:bg-neutral-700 transition text-white uppercase font-medium"
+                          aria-label="Enquire or Book products"
+                        >
+                          Enquire Now
+                        </a>
+                      </Link>
+                    </motion.div>
+                    <motion.h6
+                      variants={fadeInUp}
+                      className="font-light text-sm"
+                    >
+                      or
+                    </motion.h6>
+                    <motion.div variants={fadeInUp}>
+                      <Link
+                        href="/Company-profile-agcs.pdf"
+                        rel="noopener noreferrer"
+                      >
+                        <a
+                          target="_blank"
+                          className=" text-sky-600 hover:text-sky-500 font-light"
+                          aria-label="Download our brochure"
+                        >
+                          Download our brochure
+                        </a>
+                      </Link>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <Banner />
-          </article>
-        </div>
-        <BrochureVertical />
-      </main>
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.main>
     </>
   );
 }

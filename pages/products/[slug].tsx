@@ -34,7 +34,7 @@ const stagger = {
   },
 };
 
-function Product({ product, productsList }: Props) {
+function Product({ product }: Props) {
   return (
     <>
       <Head>

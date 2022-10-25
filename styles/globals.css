@@ -44,6 +44,10 @@ html {
   background-size: cover;
   background-color: #3aaee3;
 }
+.services-header {
+  background-image: url("/abstract-bg.svg");
+  background-size: cover;
+}
 
 footer {
   background: url("/Footer.svg") bottom / contain no-repeat;
