@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import NextNProgress from "nextjs-progressbar";
 
 import Layout from "../components/Layout";
@@ -19,7 +19,20 @@ function MyApp({ Component, pageProps }) {
           options={{ easing: "ease-in-out", speed: 200 }}
         />
         <AnimatePresence mode="wait">
-          <Component {...pageProps} />
+          <motion.div
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={{
+              pageInitial: {
+                opacity: 0,
+              },
+              pageAnimate: {
+                opacity: 1,
+              },
+            }}
+          >
+            <Component {...pageProps} />
+          </motion.div>
         </AnimatePresence>
       </Layout>
     </>
