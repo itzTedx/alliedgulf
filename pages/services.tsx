@@ -300,7 +300,7 @@ export default function Services({ services }: Props) {
                       whileHover={{ scale: 1 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <div className="card relative group overflow-hidden max-h-48 md:max-h-64 ">
+                      <div className="card relative group overflow-hidden max-h-44 md:max-h-56 ">
                         <motion.div
                           initial={{ x: 20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
