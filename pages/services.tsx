@@ -308,7 +308,7 @@ export default function Services({ services }: Props) {
                       whileHover={{ scale: 1 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <div className="card relative group overflow-hidden max-h-44 md:max-h-56 ">
+                      <div className="card relative group overflow-hidden max-h-44 md:max-h-52 ">
                         <motion.div
                           initial={{ x: 20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
@@ -324,7 +324,7 @@ export default function Services({ services }: Props) {
                             />
                           )}
                         </motion.div>
-                        <div className="absolute top-0 right-0 bottom-0 left-0 px-5 py-6 flex items-end">
+                        <div className="absolute top-0 right-0 bottom-0 left-0 p-4 flex items-end">
                           <h2 className="bg-neutral-800 text-gray-200 py-2 px-3 text-sm group-hover:text-sky-400 transition duration-500">
                             {services.servicesTitle}
                           </h2>
