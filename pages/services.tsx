@@ -283,7 +283,7 @@ export default function Services({ services }: Props) {
               </div>
             </div>
           </div>
-          <div className="container mx-auto py-6 md:py-12 z-10">
+          <div className="container mx-auto py-6 md:py-12 z-10 md:px-16">
             <div className="pt-3 md:pt-8 px-3 md:px-8">
               <p className="font-thin text-xl">
                 Looking for Specialty Materials?
@@ -294,7 +294,7 @@ export default function Services({ services }: Props) {
             </div>
             <motion.div
               variants={stagger1}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-3 px-3 md:px-8 pt-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 px-3 md:px-8 pt-6"
             >
               {services.map((services) => (
                 <Link
@@ -308,7 +308,7 @@ export default function Services({ services }: Props) {
                       whileHover={{ scale: 1 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <div className="card relative group overflow-hidden max-h-44 md:max-h-52 ">
+                      <div className="card relative group overflow-hidden max-h-44 md:max-h-[12.5rem] ">
                         <motion.div
                           initial={{ x: 20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
