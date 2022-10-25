@@ -103,7 +103,7 @@ export default function Home({ serviceSlider }: Props) {
           </motion.div>
           <motion.div
             variants={stagger1}
-            className="font-medium text-xl lg:text-2xl space-x-1 py-6 flex"
+            className="font-medium text-xl lg:text-2xl space-x-4 py-6 flex "
           >
             <Link href="/products" passHref>
               <motion.div
@@ -113,7 +113,7 @@ export default function Home({ serviceSlider }: Props) {
                 className=""
               >
                 <a
-                  className="py-2 px-3 bg-sky-700 hover:bg-sky-600 transition hover:animate-pulse text-white"
+                  className="py-2 px-3 bg-sky-700 hover:bg-sky-600 transition hover:animate-pulse text-white cursor-pointer"
                   aria-label="Products of AGCS"
                 >
                   Products
@@ -128,7 +128,7 @@ export default function Home({ serviceSlider }: Props) {
                 className=""
               >
                 <a
-                  className="py-[7px] px-3 text-neutral-700 font-normal transition hover:text-sky-600"
+                  className="py-[7px] px-3 text-neutral-600 font-normal transition hover:text-sky-600 cursor-pointer"
                   aria-label="Contact us now"
                 >
                   Contact us
